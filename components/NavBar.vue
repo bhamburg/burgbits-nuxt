@@ -13,7 +13,7 @@ const isOpen = ref(false);
             60,35 50,35 50,45 50,55 50,65 40,65 40,75 30,75 30,65 20,65 20,75 20,85 20,95 20,105 20,115 30,115 40,115 50,115 60,115 60,105 
             60,95 70,95 70,85 80,85 80,95 90,95 90,105 90,115 100,115 110,115 120,115 130,115 130,105 130,95 130,85 130,75 130,65 "/>
         </svg>
-        <span class="self-center text-2xl whitespace-nowrap">bhamburg</span>
+        <span class="self-center text-2xl whitespace-nowrap">bhamburg.com</span>
       </a>
       <div class="flex md:hidden ml-auto justify-items-center">
         <DarkMode />
