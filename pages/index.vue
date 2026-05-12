@@ -12,6 +12,9 @@
           <Button to="/about" aria-current="page" type="button" class="solid">
             About Brian
           </Button>
+          <Button to="/posts" aria-current="page" type="button">
+            Blog Posts
+          </Button>
         </div>
       </div>
       <div class="flex md:mx-5 p-4 justify-center">

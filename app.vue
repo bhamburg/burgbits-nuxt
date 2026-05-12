@@ -43,7 +43,7 @@ section, footer {
     @apply mb-6;
   }
   a {
-    @apply text-sky-800
+    @apply text-sky-700
       hover:text-sky-600 
       dark:text-indigo-300
       dark:hover:text-indigo-500

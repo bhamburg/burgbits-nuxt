@@ -1,5 +1,6 @@
 <script setup>
 const props = defineProps({
+  isPost: Boolean,
   links: Array
 })
 </script>
@@ -12,5 +13,8 @@ const props = defineProps({
         <a :href="`\#${link.id}`" class="text-lg">{{ link.text }}</a>
       </li>
     </ul>
+    <div v-if="props.isPost" class="pt-8">
+      <a class="link" href="/posts">← Back to the blog</a>
+    </div>
   </div>
 </template>

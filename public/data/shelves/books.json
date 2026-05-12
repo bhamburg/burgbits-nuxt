@@ -1,0 +1,204 @@
+{
+  "fetched": "2026-01-10T01:29:14.562Z",
+  "shelves": [
+    {
+      "title": "Currently Reading",
+      "items": [
+        {
+          "author": "Neufeld, Gordon",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1745307853l/39713458.jpg",
+          "title": "Hold On to Your Kids: Why Parents Need to Matter More Than Peers",
+          "rating": 0,
+          "url": "https://www.goodreads.com/book/show/39713458-hold-on-to-your-kids"
+        },
+        {
+          "author": "Greene, Robert",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1635018776l/56756745.jpg",
+          "dateFinished": "Dec 31, 2023",
+          "title": "The Daily Laws: 366 Meditations",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/56756745-the-daily-laws"
+        }
+      ]
+    },
+    {
+      "title": "Recently Read",
+      "items": [
+        {
+          "author": "Orwell, Georgeqwwscccccccccc",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1707249071l/150246447.jpg",
+          "title": "The Algebra of Wealth: A Simple Formula for Financial Security",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/170448.Animal_Farm"
+        },
+        {
+          "author": "Galloway, Scott",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1707249071l/150246447.jpg",
+          "title": "The Algebra of Wealth: A Simple Formula for Financial Security",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/150246447-the-algebra-of-wealth"
+        },
+        {
+          "author": "Holiday, Ryan",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1743045444l/230422186.jpg",
+          "dateFinished": "Dec 15, 2025",
+          "title": "Wisdom Takes Work (The Stoic Virtues Series)",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/230422186-wisdom-takes-work"
+        },
+        {
+          "author": "Moore, Liz",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1717970585l/199700434.jpg",
+          "dateFinished": "Dec 2, 2025",
+          "title": "The God of the Woods",
+          "rating": 3,
+          "url": "https://www.goodreads.com/book/show/199700434-the-god-of-the-woods"
+        },
+        {
+          "author": "Nichols, Thomas M.",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1465583375l/26720949.jpg",
+          "dateFinished": "Nov 3, 2025",
+          "title": "The Death of Expertise: The Campaign Against Established Knowledge and Why It Matters",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/26720949-the-death-of-expertise"
+        },
+        {
+          "author": "Durant, Will",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1385330016l/18936229.jpg",
+          "dateFinished": "Oct 23, 2025",
+          "title": "The Lessons of History",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/18936229-the-lessons-of-history"
+        },
+        {
+          "author": "McCammon, Ross",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1443016511l/24612116.jpg",
+          "dateFinished": "Oct 16, 2025",
+          "title": "Works Well with Others: An Outsider's Guide to Shaking Hands, Shutting Up, Handling Jerks, and Other Crucial Skills in Business That No One Ever Teaches You",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/24612116-works-well-with-others"
+        },
+        {
+          "author": "Kaufman, Scott Barry",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1742371531l/229611533.jpg",
+          "dateFinished": "Oct 9, 2025",
+          "title": "Transcend: The New Science of Self-Actualization and How It Can Transform Your Life",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/229611533-transcend"
+        },
+        {
+          "author": "Hayes, Christopher L.",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1750286599l/236815722.jpg",
+          "dateFinished": "Sep 22, 2025",
+          "title": "The Sirens' Call: How Attention Became the World's Most Endangered Resource",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/236815722-the-sirens-call"
+        },
+        {
+          "author": "Kafka, Franz",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1431789482l/17164999.jpg",
+          "dateFinished": "Sep 13, 2025",
+          "title": "The Metamorphosis",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/17164999-the-metamorphosis"
+        },
+        {
+          "author": "Csikszentmihalyi, Mihaly",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1432796188l/25616547.jpg",
+          "dateFinished": "Sep 9, 2025",
+          "title": "Flow: Living at the Peak of your Abilities",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/25616547-flow"
+        },
+        {
+          "author": "Zevin, Gabrielle",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1673647488l/77262337.jpg",
+          "dateFinished": "Aug 31, 2025",
+          "title": "Tomorrow, and Tomorrow, and Tomorrow",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/77262337-tomorrow-and-tomorrow-and-tomorrow"
+        },
+        {
+          "author": "Inman, Matthew",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1547944939l/43121510.jpg",
+          "dateFinished": "Aug 26, 2025",
+          "title": "Why My Cat Is More Impressive Than Your Baby (The Oatmeal)",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/43121510-why-my-cat-is-more-impressive-than-your-baby"
+        },
+        {
+          "author": "Robbins, Mel",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1747140153l/233942445.jpg",
+          "dateFinished": "Aug 5, 2025",
+          "title": "The Let Them Theory: A Life-Changing Tool That Millions of People Can't Stop Talking About",
+          "rating": 3,
+          "url": "https://www.goodreads.com/book/show/233942445-the-let-them-theory"
+        },
+        {
+          "author": "Haig, Matt",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1698348211l/102189586.jpg",
+          "dateFinished": "Jul 26, 2025",
+          "title": "The Midnight Library (The Midnight World, #1)",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/102189586-the-midnight-library"
+        },
+        {
+          "author": "Herbert, Frank",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1577043824l/44492285._.jpg",
+          "dateFinished": "Jul 20, 2025",
+          "title": "Dune Messiah (Dune #2)",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/44492285-dune-messiah"
+        },
+        {
+          "author": "Weir, Andy",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1734434586l/222697645.jpg",
+          "dateFinished": "Jun 1, 2025",
+          "title": "Project Hail Mary",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/222697645-project-hail-mary"
+        },
+        {
+          "author": "Duckworth, Angela",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1632024090l/27213329.jpg",
+          "dateFinished": "May 22, 2025",
+          "title": "Grit: The Power of Passion and Perseverance",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/27213329-grit"
+        },
+        {
+          "author": "Dobelli, Rolf",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1397416642l/21901765.jpg",
+          "dateFinished": "Apr 18, 2025",
+          "title": "The Art of Thinking Clearly: The International Bestseller That Improves Decision Making and Counters Faulty Reasoning with Research-Backed Good Sense",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/21901765-the-art-of-thinking-clearly"
+        },
+        {
+          "author": "Magness, Steve",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1652056898l/61057016.jpg",
+          "dateFinished": "Mar 20, 2025",
+          "title": "Do Hard Things: Why We Get Resilience Wrong and the Surprising Science of Real Toughness",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/61057016-do-hard-things"
+        },
+        {
+          "author": "Lao Tzu",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348090343l/147310.jpg",
+          "dateFinished": "Jan 21, 2025",
+          "title": "The Complete Works of Lao Tzu: Tao Teh Ching & Hua Hu Ching",
+          "rating": 5,
+          "url": "https://www.goodreads.com/book/show/147310.The_Complete_Works_of_Lao_Tzu"
+        },
+        {
+          "author": "Holiday, Ryan",
+          "coverSrc": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1698093217l/199334305.jpg",
+          "dateFinished": "Dec 29, 2024",
+          "title": "Right Thing, Right Now: Justice in an Unjust World",
+          "rating": 4,
+          "url": "https://www.goodreads.com/book/show/199334305-right-thing-right-now"
+        }
+      ]
+    }
+  ]
+}

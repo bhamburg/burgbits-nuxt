@@ -1,9 +1,8 @@
-Last updated: February 2025  
-[What is a /uses page?](https://uses.tech/){:target="_blank"}
-
+---
+updated: 2026-05-10
+---
 ## Hardware
 ### Computers
-- [Razer Blade 14 (2023)](https://www.razer.com/mena-en/gaming-laptops/razer-blade-14){:target="_blank"}
 - [Custom-built PC](https://pcpartpicker.com/b/Hq9G3C){:target="_blank"}
 - [MacBook Air (M1, 2020)](https://en.wikipedia.org/wiki/MacBook_Air_(Apple_silicon)){:target="_blank"}
 - [Steam Deck (512 GB)](https://store.steampowered.com/steamdeck){:target="_blank"}
@@ -32,7 +31,8 @@ Last updated: February 2025
 - [Many](https://www.pricecharting.com/offers?seller=wpdbc2737xvuig5i5yd3g3bohq&status=collection){:target="_blank"} gaming controllers, sticks, and dongles that are mostly OEM or by [8BitDo](https://www.8bitdo.com/){:target="_blank"}
 
 ### Mobile Devices
-- [iPhone 14 Pro](https://en.wikipedia.org/wiki/IPhone_14_Pro){:target="_blank"}
+- [iPhone 16 Pro](https://en.wikipedia.org/wiki/IPhone_16_Pro){:target="_blank"}
+- [Apple Watch Series 10](https://en.wikipedia.org/wiki/Apple_Watch#Tenth_generation_(Series_10)){:target="_blank"}
 - [iPad Air (4th Generation)](https://en.wikipedia.org/wiki/IPad_Air_(4th_generation)){:target="_blank"}
 - [GoPro HERO13 Black](https://gopro.com/en/us/shop/cameras/buy/hero13black/CHDHX-131-master.html){:target="_blank"}
 
@@ -53,5 +53,5 @@ Last updated: February 2025
 - [GarageBand](https://www.apple.com/mac/garageband/){:target="_blank"}
 - [MuseScore](https://musescore.org/){:target="_blank"}
 
-### Collection
-[View My Physical Video Game Collection on PriceCharting](https://www.pricecharting.com/offers?seller=wpdbc2737xvuig5i5yd3g3bohq&status=collection){:target="_blank"}
+
+[What is a /uses page? →](https://uses.tech/){:target="_blank"}

@@ -1,0 +1,418 @@
+{
+  "fetched": "2026-04-25T13:14:59.567Z",
+  "shelves": [
+    {
+      "title": "Recently Watched",
+      "fetchedFrom": "https://letterboxd.com/burgbits/films/diary",
+      "items": [
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/4/8/0/0/9/9/480099-the-two-popes-0-600-0-900-crop.jpg?v=b9d6e67718",
+          "dateFinished": "Apr 22, 2026",
+          "rating": 4,
+          "releaseYear": "2019",
+          "title": "The Two Popes",
+          "url": "https://letterboxd.com/burgbits/film/the-two-popes/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/6/1/1/2/8/8/611288-project-hail-mary-0-600-0-900-crop.jpg?v=ac31b6ec03",
+          "dateFinished": "Apr 19, 2026",
+          "rating": 5,
+          "releaseYear": "2026",
+          "title": "Project Hail Mary",
+          "url": "https://letterboxd.com/burgbits/film/project-hail-mary/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/1/1/1/0/0/8/0/1110080-the-super-mario-galaxy-movie-0-600-0-900-crop.jpg?v=fefcfca134",
+          "dateFinished": "Apr 11, 2026",
+          "rating": 4,
+          "releaseYear": "2026",
+          "title": "The Super Mario Galaxy Movie",
+          "url": "https://letterboxd.com/burgbits/film/the-super-mario-galaxy-movie/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/1/2/0/7/5/5/7/1207557-hoppers-0-600-0-900-crop.jpg?v=7711e7b5a7",
+          "dateFinished": "Mar 21, 2026",
+          "rating": 4,
+          "releaseYear": "2026",
+          "title": "Hoppers",
+          "url": "https://letterboxd.com/burgbits/film/hoppers/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/yo/63/zv/99/2pE4pTT8IXF56fiWMOk7cv7Fkpi-0-600-0-900-crop.jpg?v=3fa83a60a6",
+          "dateFinished": "Feb 17, 2026",
+          "rating": 4,
+          "releaseYear": "2005",
+          "title": "Kingdom of Heaven",
+          "url": "https://letterboxd.com/burgbits/film/kingdom-of-heaven/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/4/2/1/3/7/42137-annie-0-600-0-900-crop.jpg?v=d707552e6e",
+          "dateFinished": "Feb 14, 2026",
+          "rating": 4,
+          "releaseYear": "1982",
+          "title": "Annie",
+          "url": "https://letterboxd.com/burgbits/film/annie/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/4/3/2/3/0/2/432302-the-super-mario-bros-movie-0-600-0-900-crop.jpg?v=d7dd92386e",
+          "dateFinished": "Feb 14, 2026",
+          "rating": 4,
+          "releaseYear": "2023",
+          "title": "The Super Mario Bros. Movie",
+          "url": "https://letterboxd.com/burgbits/film/the-super-mario-bros-movie/1/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/8/7/7/2/5/3/877253-conclave-0-600-0-900-crop.jpg?v=f9cbf50dec",
+          "dateFinished": "Feb 11, 2026",
+          "rating": 4,
+          "releaseYear": "2024",
+          "title": "Conclave",
+          "url": "https://letterboxd.com/burgbits/film/conclave/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/1/9/1/4/51914-groundhog-day-0-600-0-900-crop.jpg?v=9361c0080d",
+          "dateFinished": "Feb 8, 2026",
+          "rating": 4,
+          "releaseYear": "1993",
+          "title": "Groundhog Day",
+          "url": "https://letterboxd.com/burgbits/film/groundhog-day/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/7s/m2/bw/d0/caoYMcjUamGoBVy65i1AHJBvdzw-0-600-0-900-crop.jpg?v=88d9d6cce4",
+          "dateFinished": "Feb 7, 2026",
+          "rating": 5,
+          "releaseYear": "1980",
+          "title": "The Shining",
+          "url": "https://letterboxd.com/burgbits/film/the-shining/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/1/7/0/9/51709-batman-returns-0-600-0-900-crop.jpg?v=810ef07957",
+          "dateFinished": "Feb 7, 2026",
+          "rating": 4,
+          "releaseYear": "1992",
+          "title": "Batman Returns",
+          "url": "https://letterboxd.com/burgbits/film/batman-returns/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/1/3/0/2/51302-a-christmas-story-1983-0-600-0-900-crop.jpg?v=69666c8131",
+          "dateFinished": "Dec 27, 2025",
+          "rating": 4,
+          "releaseYear": "1983",
+          "title": "A Christmas Story",
+          "url": "https://letterboxd.com/burgbits/film/a-christmas-story-1983/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/9/7/7/3/4/2/977342-zootopia-2-0-600-0-900-crop.jpg?v=00a15a97bc",
+          "dateFinished": "Dec 27, 2025",
+          "rating": 5,
+          "releaseYear": "2025",
+          "title": "Zootopia 2",
+          "url": "https://letterboxd.com/burgbits/film/zootopia-2/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/tp/jv/zf/fi/Amwq3yJP4VblXUptDAV7S13smCd-0-600-0-900-crop.jpg?v=0557a0e3dd",
+          "dateFinished": "Dec 27, 2025",
+          "rating": 4,
+          "releaseYear": "1989",
+          "title": "The Little Mermaid",
+          "url": "https://letterboxd.com/burgbits/film/the-little-mermaid/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/2/7/0/5/2705-finding-nemo-0-600-0-900-crop.jpg?v=b329bc5740",
+          "dateFinished": "Dec 27, 2025",
+          "rating": 4,
+          "releaseYear": "2003",
+          "title": "Finding Nemo",
+          "url": "https://letterboxd.com/burgbits/film/finding-nemo/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/i5/04/e8/7t/home%20alone%202-0-600-0-900-crop.jpg?v=03abfa6a99",
+          "dateFinished": "Dec 27, 2025",
+          "rating": 4,
+          "releaseYear": "1992",
+          "title": "Home Alone 2: Lost in New York",
+          "url": "https://letterboxd.com/burgbits/film/home-alone-2-lost-in-new-york/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/1/3/3/6/51336-austin-powers-international-man-of-mystery-0-600-0-900-crop.jpg?v=b24eda4ee9",
+          "dateFinished": "Nov 22, 2025",
+          "rating": 4,
+          "releaseYear": "1997",
+          "title": "Austin Powers: International Man of Mystery",
+          "url": "https://letterboxd.com/burgbits/film/austin-powers-international-man-of-mystery/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/1g/zz/ez/d8/yyCKYaW908ZbpexpnBJ3p8o87HA-0-600-0-900-crop.jpg?v=19a50874d0",
+          "dateFinished": "Nov 22, 2025",
+          "rating": 5,
+          "releaseYear": "1993",
+          "title": "Jurassic Park",
+          "url": "https://letterboxd.com/burgbits/film/jurassic-park/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/1/2/0/3/51203-spaceballs-0-600-0-900-crop.jpg?v=a9ab35ec2b",
+          "dateFinished": "Nov 7, 2025",
+          "rating": 5,
+          "releaseYear": "1987",
+          "title": "Spaceballs",
+          "url": "https://letterboxd.com/burgbits/film/spaceballs/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/1/8/9/9/51899-star-trek-the-motion-picture-0-600-0-900-crop.jpg?v=14a06a74fe",
+          "dateFinished": "Nov 1, 2025",
+          "rating": 3,
+          "releaseYear": "1979",
+          "title": "Star Trek: The Motion Picture",
+          "url": "https://letterboxd.com/burgbits/film/star-trek-the-motion-picture/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/1/6/1/4/51614-borat-cultural-learnings-of-america-for-make-benefit-glori-0-600-0-900-crop.jpg?v=17316654a2",
+          "dateFinished": "Aug 17, 2025",
+          "rating": 5,
+          "releaseYear": "2006",
+          "title": "Borat: Cultural Learnings of America for Make Benefit Glorious Nation of Kazakhstan",
+          "url": "https://letterboxd.com/burgbits/film/borat-cultural-learnings-of-america-for-make-benefit-glorious-nation-of-kazakhstan/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/4/2/5/8/0/42580-the-sound-of-music-0-600-0-900-crop.jpg?v=743d70b886",
+          "dateFinished": "Aug 3, 2025",
+          "rating": 5,
+          "releaseYear": "1965",
+          "title": "The Sound of Music",
+          "url": "https://letterboxd.com/burgbits/film/the-sound-of-music/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/1/8/8/6/51886-back-to-the-future-part-ii-0-600-0-900-crop.jpg?v=85bd0a310a",
+          "dateFinished": "Jul 16, 2025",
+          "rating": 4,
+          "releaseYear": "1989",
+          "title": "Back to the Future Part II",
+          "url": "https://letterboxd.com/burgbits/film/back-to-the-future-part-ii/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/xx/io/jp/45/the-truman-show-0-600-0-900-crop.jpg?v=704ba393f7",
+          "dateFinished": "Jul 16, 2025",
+          "rating": 5,
+          "releaseYear": "1998",
+          "title": "The Truman Show",
+          "url": "https://letterboxd.com/burgbits/film/the-truman-show/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/1/8/0/4/51804-willy-wonka-the-chocolate-factory-0-600-0-900-crop.jpg?v=df80e8be28",
+          "dateFinished": "Jul 14, 2025",
+          "rating": 4,
+          "releaseYear": "1971",
+          "title": "Willy Wonka & the Chocolate Factory",
+          "url": "https://letterboxd.com/burgbits/film/willy-wonka-the-chocolate-factory/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/rs/wk/3i/nt/gWnW7vxm8yr01TVLQhL4aI02orp-0-600-0-900-crop.jpg?v=f8250fbc59",
+          "dateFinished": "Jul 12, 2025",
+          "rating": 4,
+          "releaseYear": "1988",
+          "title": "Beetlejuice",
+          "url": "https://letterboxd.com/burgbits/film/beetlejuice/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/4/8/1/2/3/3/481233-lilo-stitch-2025-0-600-0-900-crop.jpg?v=f3f634ac40",
+          "dateFinished": "Jun 26, 2025",
+          "rating": 3,
+          "releaseYear": "2025",
+          "title": "Lilo & Stitch",
+          "url": "https://letterboxd.com/burgbits/film/lilo-stitch-2025/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/8/8/7/6/5/3/887653-thunderbolts-0-600-0-900-crop.jpg?v=80380bc773",
+          "dateFinished": "May 15, 2025",
+          "rating": 4,
+          "releaseYear": "2025",
+          "title": "Thunderbolts*",
+          "url": "https://letterboxd.com/burgbits/film/thunderbolts/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/2/5/8/1/2/8/258128-rogue-one-a-star-wars-story-0-600-0-900-crop.jpg?v=eff30d0282",
+          "dateFinished": "May 14, 2025",
+          "rating": 4,
+          "releaseYear": "2016",
+          "title": "Rogue One: A Star Wars Story",
+          "url": "https://letterboxd.com/burgbits/film/rogue-one-a-star-wars-story/1/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/8/5/4/6/9/1/854691-a-minecraft-movie-0-600-0-900-crop.jpg?v=074e7fed9e",
+          "dateFinished": "Apr 16, 2025",
+          "rating": 2,
+          "releaseYear": "2025",
+          "title": "A Minecraft Movie",
+          "url": "https://letterboxd.com/burgbits/film/a-minecraft-movie/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/9/2/1/6/0/92160-paddington-0-600-0-900-crop.jpg?v=c7db8f284b",
+          "dateFinished": "Mar 30, 2025",
+          "rating": 3,
+          "releaseYear": "2014",
+          "title": "Paddington",
+          "url": "https://letterboxd.com/burgbits/film/paddington/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/3/3/7/0/3/6/337036-wicked-2024-0-600-0-900-crop.jpg?v=c519c37ff7",
+          "dateFinished": "Mar 23, 2025",
+          "rating": 2,
+          "releaseYear": "2024",
+          "title": "Wicked",
+          "url": "https://letterboxd.com/burgbits/film/wicked-2024/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/4/8/0/0/0/48000-idiocracy-0-600-0-900-crop.jpg?v=ce4d076f55",
+          "dateFinished": "Mar 16, 2025",
+          "rating": 4,
+          "releaseYear": "2006",
+          "title": "Idiocracy",
+          "url": "https://letterboxd.com/burgbits/film/idiocracy/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/0/9/9/1/50991-office-space-0-600-0-900-crop.jpg?v=ecc49b2fbf",
+          "dateFinished": "Mar 7, 2025",
+          "rating": 5,
+          "releaseYear": "1999",
+          "title": "Office Space",
+          "url": "https://letterboxd.com/burgbits/film/office-space/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/2/5/8/1/2/8/258128-rogue-one-a-star-wars-story-0-600-0-900-crop.jpg?v=eff30d0282",
+          "dateFinished": "Dec 7, 2024",
+          "rating": 4,
+          "releaseYear": "2016",
+          "title": "Rogue One: A Star Wars Story",
+          "url": "https://letterboxd.com/burgbits/film/rogue-one-a-star-wars-story/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/0/7/0/9/50709-star-wars-episode-iii-revenge-of-the-sith-0-600-0-900-crop.jpg?v=cdb8caab10",
+          "dateFinished": "Nov 11, 2024",
+          "rating": 3,
+          "releaseYear": "2005",
+          "title": "Star Wars: Episode III – Revenge of the Sith",
+          "url": "https://letterboxd.com/burgbits/film/star-wars-episode-iii-revenge-of-the-sith/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/6/1/7/4/4/3/617443-dune-part-two-0-600-0-900-crop.jpg?v=cc533700f8",
+          "dateFinished": "Nov 10, 2024",
+          "rating": 4,
+          "releaseYear": "2024",
+          "title": "Dune: Part Two",
+          "url": "https://letterboxd.com/burgbits/film/dune-part-two/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/0/7/1/0/50710-star-wars-episode-ii-attack-of-the-clones-0-600-0-900-crop.jpg?v=cdb8caab10",
+          "dateFinished": "Nov 9, 2024",
+          "rating": 2,
+          "releaseYear": "2002",
+          "title": "Star Wars: Episode II – Attack of the Clones",
+          "url": "https://letterboxd.com/burgbits/film/star-wars-episode-ii-attack-of-the-clones/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/0/7/1/1/50711-star-wars-episode-i-the-phantom-menace-0-600-0-900-crop.jpg?v=cdb8caab10",
+          "dateFinished": "Nov 9, 2024",
+          "rating": 3,
+          "releaseYear": "1999",
+          "title": "Star Wars: Episode I – The Phantom Menace",
+          "url": "https://letterboxd.com/burgbits/film/star-wars-episode-i-the-phantom-menace/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/7/8/4/3/2/8/784328-oppenheimer-0-600-0-900-crop.jpg?v=e3c6e7a32c",
+          "dateFinished": "Sep 20, 2024",
+          "rating": 5,
+          "releaseYear": "2023",
+          "title": "Oppenheimer",
+          "url": "https://letterboxd.com/burgbits/film/oppenheimer-2023/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/xa/u0/s6/45/f1iPiQoYbQ40XsJHPyMIiBmSrDB-0-600-0-900-crop.jpg?v=5422450fdd",
+          "dateFinished": "Sep 4, 2024",
+          "rating": 4,
+          "releaseYear": "1984",
+          "title": "The Natural",
+          "url": "https://letterboxd.com/burgbits/film/the-natural/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/9/2/1/5/7/8/921578-inside-out-2-0-600-0-900-crop.jpg?v=efa25e5cca",
+          "dateFinished": "Jun 30, 2024",
+          "rating": 4,
+          "releaseYear": "2024",
+          "title": "Inside Out 2",
+          "url": "https://letterboxd.com/burgbits/film/inside-out-2-2024/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/4/5/6/3/1/45631-blazing-saddles-0-600-0-900-crop.jpg?v=75fe1e4fb7",
+          "dateFinished": "Feb 18, 2024",
+          "rating": 5,
+          "releaseYear": "1974",
+          "title": "Blazing Saddles",
+          "url": "https://letterboxd.com/burgbits/film/blazing-saddles/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/nx/8b/vs/gc/cDbNAY0KM84cxXhmj8f0dLWza3t-0-600-0-900-crop.jpg?v=49eed12751",
+          "dateFinished": "Feb 2, 2024",
+          "rating": 5,
+          "releaseYear": "2021",
+          "title": "Dune",
+          "url": "https://letterboxd.com/burgbits/film/dune-2021/1/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/9/6/9/6/7/6/969676-leo-0-600-0-900-crop.jpg?v=009ca080bf",
+          "dateFinished": "Jan 24, 2024",
+          "rating": 4,
+          "releaseYear": "2023",
+          "title": "Leo",
+          "url": "https://letterboxd.com/burgbits/film/leo-2023/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/3/7/1/4/7/7/371477-sing-2-0-600-0-900-crop.jpg?v=32ce33979f",
+          "dateFinished": "Jan 24, 2024",
+          "rating": 4,
+          "releaseYear": "2021",
+          "title": "Sing 2",
+          "url": "https://letterboxd.com/burgbits/film/sing-2/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/sm/upload/mn/7p/6m/zn/lW0kUtXTOVlHTVhDO2VzNBACAHX-0-600-0-900-crop.jpg?v=b75340fe68",
+          "dateFinished": "Jan 24, 2024",
+          "rating": 4,
+          "releaseYear": "2016",
+          "title": "Sing",
+          "url": "https://letterboxd.com/burgbits/film/sing-2016/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/1/0/5/6/2/1/0/1056210-kelce-0-600-0-900-crop.jpg?v=07e34ca982",
+          "dateFinished": "Sep 29, 2023",
+          "rating": 3,
+          "releaseYear": "2023",
+          "title": "Kelce",
+          "url": "https://letterboxd.com/burgbits/film/kelce/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/2/7/7/0/6/4/277064-barbie-0-600-0-900-crop.jpg?v=1b83dc7a71",
+          "dateFinished": "Sep 29, 2023",
+          "rating": 2,
+          "releaseYear": "2023",
+          "title": "Barbie",
+          "url": "https://letterboxd.com/burgbits/film/barbie/"
+        },
+        {
+          "coverSrc": "https://a.ltrbxd.com/resized/film-poster/5/6/8/6/7/8/568678-hocus-pocus-2-0-600-0-900-crop.jpg?v=68521fc0e0",
+          "dateFinished": "Sep 22, 2023",
+          "rating": 3,
+          "releaseYear": "2022",
+          "title": "Hocus Pocus 2",
+          "url": "https://letterboxd.com/burgbits/film/hocus-pocus-2/"
+        },
+        {
+          "coverSrc": "https://letterboxd.com/film/cool-hand-luke/",
+          "dateFinished": "Jul 20, 2023",
+          "releaseYear": "o Me",
+          "title": "Recommended",
+          "url": "https://letterboxd.com/burgbits/list/recommended-to-me/"
+        }
+      ]
+    }
+  ]
+}

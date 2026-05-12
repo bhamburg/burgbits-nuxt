@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Shelves - BurgBits'
+  title: 'Shelves - Brian Hamburg'
 })
 </script>
 
@@ -25,7 +25,7 @@ useHead({
             <em class="text-nowrap">— Mark Twain</em>
           </p>
         </blockquote>
-        <Shelf api="/api/books" />
+        <Shelf dataPath="/data/shelves/books.json" />
 
         <h2 id="films">Films</h2>
         <blockquote>
@@ -36,7 +36,7 @@ useHead({
             <em class="text-nowrap">— George Lucas</em>
           </p>
         </blockquote>
-        <Shelf api="/api/films" />
+        <Shelf dataPath="/data/shelves/films.json" />
 
         <h2 id="games">Games</h2>
         <blockquote>
@@ -45,7 +45,7 @@ useHead({
             <em class="text-nowrap">— Shigeru Miyamoto</em>
           </p>
         </blockquote>
-        <Shelf api="/api/games" />
+        <Shelf dataPath="/data/shelves/games.json" />
       </article>
     </div>
   </Section>

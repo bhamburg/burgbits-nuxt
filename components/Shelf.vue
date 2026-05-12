@@ -1,13 +1,19 @@
 <script setup lang="ts">
+import { formatDate } from '~/utils/contentHelpers';
+
 const props = defineProps({
   alwaysGrid: Boolean,
   alwaysTable: Boolean,
-  api: String,
+  dataPath: String,
   grid: Boolean,
   table: Boolean
 })
 
-const { status, data: data } = await useLazyFetch<any>(props.api!)
+const source = props.dataPath
+const { status, data: data } = useFetch<any>(source!, {
+  server: false,
+  lazy: true,
+})
 
 const isTable = ref(false)
 const sortColumn = ref('dateFinished')
@@ -298,12 +304,7 @@ watchEffect(() => {
       </div>
     </div>
     <p class="my-2 text-sm text-center text-zinc-500">
-      <span>Powered by <NuxtLink :to="data.profileUrl" target="_blank">{{ data.appName }}</NuxtLink></span><br />
-        Last fetched:
-        {{ new Date(data.fetched).toLocaleDateString('en-gb', {
-          weekday:"long", year:"numeric", month:"long", day:"numeric"
-        }) }}
-        at {{ new Date(data.fetched).toLocaleTimeString('en-gb') }}
+        Last updated: {{ formatDate(data.lastUpdated) }}
     </p>
   </div>
 </template>
