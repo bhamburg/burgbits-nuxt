@@ -103,7 +103,7 @@ watchEffect(() => {
 
       <!-- grid view -->
       <div v-show="!isTable" class="flex flex-row flex-wrap items-end justify-center md:justify-start no-underline">
-        <NuxtLink v-for="item in shelf.items.slice(0, 17)" :key="item.title+'-'+item.dateFinished" :title="
+        <NuxtLink v-for="item in shelf.items.slice(0, 23)" :key="item.title+'-'+item.dateFinished" :title="
             item.title  
             + (item.author ? ` - ${item.author}` : '') 
             + (item.platforms?.length ? ` - ${item.platforms.at(-1)}` : '')

@@ -6,7 +6,7 @@ updated: 2026-05-10
 
 ## Family
 
-My wife Andrea and I reside in Northeast Philly with our twin girls, Elizabeth and Louise. We have a 3-year-old labraheeler named Ludwig. The girls are really enjoying 4rd grade and keeping busy with activities like drama club, singing lessons, and dance. We have no intentions of leaving the area because of the need to stay close to extended family and a tight-knit community of friends here in the Greater Philadelphia region.
+My wife Andrea and I reside in Northeast Philly with our twin girls, Elizabeth and Louise. We have a 5-year-old labraheeler named Ludwig. The girls are really enjoying 4rd grade and keeping busy with activities like drama club, singing lessons, and dance. We have no intentions of leaving the area because of the need to stay close to extended family and a tight-knit community of friends here in the Greater Philadelphia region.
 
 ## Work
 
