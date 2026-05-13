@@ -1,34 +1,59 @@
 <template>
-  <div 
-    v-on:click="flip"
-    :class="['flip-card lg:w-80 lg:h-80 w-64 h-64', {active: flipped}]"
+  <div
+    @click="flip"
+    :class="['flip-card lg:w-80 lg:h-80 w-64 h-64', { active: flipped }]"
     title="Click me!"
   >
     <div class="flip-card-inner">
-      <div class="flip-card-front rounded-full w-full bg-slate-700 border-8 border-white shadow-inner">
+      <div class="flip-card-front rounded-full bg-slate-700 border-8 border-white shadow-inner">
         <ClientOnly>
           <NuxtImg
-            :class="heroLoaded ? 'opacity-100' : 'opacity-0'"
+            src="/images/brian-hamburg-profile-photo-DICE2019.jpeg"
             alt="Brian Hamburg"
             class="rounded-full w-full transition-opacity duration-1000"
-            src="/images/brian-hamburg-profile-photo-DICE2019.jpeg" 
+            :class="heroLoaded ? 'opacity-100' : 'opacity-0'"
             @load="heroLoaded = true"
           />
         </ClientOnly>
       </div>
-      <div class="flip-card-back rounded-full w-full bg-white border-8 border-white">
+      <div class="flip-card-back rounded-full bg-white border-8 border-white">
         <ClientOnly>
           <NuxtImg
-            alt="Brian Hamburg"
             class="rounded-full w-full"
-            :src="photos[photoIndex].src" 
-            :alt="photos[photoIndex].alt"
+            :src="photos[photoIndex]"
+            alt="Brian Hamburg"
           />
         </ClientOnly>
       </div>
     </div>
   </div>
 </template>
+
+<script setup>
+const { data: photos } = await useFetch('/api/photoFlipper')
+
+const heroLoaded = ref(false)
+const flipped = ref(false)
+const flipping = ref(false)
+const photoIndex = ref(Math.floor(Math.random() * (photos.value?.length ?? 1)))
+
+onMounted(() => {
+  photos.value?.forEach(src => { new Image().src = src })
+  setInterval(flip, 10000)
+})
+
+function flip() {
+  if (flipping.value) return
+  flipping.value = true
+  flipped.value = !flipped.value
+  if (!flipped.value) {
+    setTimeout(() => {
+      photoIndex.value = Math.floor(Math.random() * photos.value.length)
+    }, 800)
+  }
+  setTimeout(() => { flipping.value = false }, 1000)
+}
+</script>
 
 <style>
   /* flip card styles */
@@ -67,136 +92,3 @@
     transform: rotateY(180deg);
   }
 </style>
-
-<script>
-  export default {
-    data () {
-      let flipped  = false,
-          flipping = false,
-          heroLoaded = false,
-          photos   = [
-            {
-              'src': '/images/2015-mummers-parade.jpg',
-              'alt': '2015 Mummers Parade'
-            },
-            {
-              'src': '/images/2022-mummers-parade.jpg',
-              'alt': '2022 Mummers Parade'
-            },
-            {
-              'src': '/images/at-cannstatters.jpg',
-              'alt': 'Summer with the Twins'
-            },
-            {
-              'src': '/images/christmas-2020.jpg',
-              'alt': 'Christmas 2020'
-            },
-            {
-              'src': '/images/disney-world.jpg',
-              'alt': 'Magic Kingdom'
-            },
-            {
-              'src': '/images/Hamburg-family-beach.jpg',
-              'alt': 'On the beach'
-            },
-            {
-              'src': '/images/july-4th-2020.jpg',
-              'alt': 'Fourth of July'
-            },
-            {
-              'src': '/images/love-phila.jpg',
-              'alt': 'With Love, Philadelphia'
-            },
-            {
-              'src': '/images/nifty-fifties.jpg',
-              'alt': 'Daughter Daddy Dance'
-            },
-            {
-              'src': '/images/night-out.jpg',
-              'alt': 'fancy night out'
-            },
-            {
-              'src': '/images/fancy-wedding.jpg',
-              'alt': 'Wedding at the Union League'
-            },
-            {
-              'src': '/images/the-claw.jpg',
-              'alt': 'claw machine halloween costume'
-            },
-            {
-              'src': '/images/vegavox.jpg',
-              'alt': 'Vegavox banjo'
-            },
-            {
-              'src': '/images/wedding-city-hall.jpg',
-              'alt': 'wedding photo at city hall'
-            },
-            {
-              'src': '/images/with-fralinger-shades.jpg',
-              'alt': 'banjo with shades'
-            },
-            {
-              'src': '/images/illusions.jpg',
-              'alt': 'illusions'
-            },
-            {
-              'src': '/images/java-bean-hamburg.jpg',
-              'alt': 'Java the Bunny'
-            },
-            {
-              'src': '/images/ludwig-banjo.jpg',
-              'alt': 'Ludwig with banjo'
-            },
-            {
-              'src': '/images/mario-prize.jpg',
-              'alt': 'Huge plush Mario prize'
-            },
-            {
-              'src': '/images/old-timey-banjo.png',
-              'alt': 'Red Hot Ramblers gig in black and white'
-            },
-            {
-              'src': '/images/eagles-car.jpg',
-              'alt': 'Red Hot Ramblers gig in black and white'
-            },
-          ],
-          photoIndex = Math.floor(Math.random() * photos.length); // start with random photo from array
-
-      return {
-        flipped,
-        flipping,
-        heroLoaded,
-        photoIndex,
-        photos
-      }
-    },
-    mounted() {
-      // preload images
-      this.$nextTick(function () {
-        for (var i = 0; i < this.photos.length; i++) {
-          let tempImage = new Image();
-          tempImage.src = this.photos[i].src;
-        }
-      })
-
-      // auto flip after 8 seconds
-      setInterval(()=>{
-        this.flip();
-      },10000)
-    },
-    methods: {
-      flip: function() {
-        if (!this.flipping) {
-          this.flipping = true;
-          this.flipped = !this.flipped;
-          if (!this.flipped) {
-            setTimeout(() => {
-              this.photoIndex = Math.floor(Math.random() * this.photos.length); // choose another random photo from array
-            }, 800); // wait until animation finishes to load next image
-          }
-          setTimeout(() => { this.flipping = false }, 1000); // throttle flipping
-        }
-      }
-    }
-  }
-</script>

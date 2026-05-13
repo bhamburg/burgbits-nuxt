@@ -13,7 +13,7 @@ useHead({
       
       <OnThisPage :links="[
         { text: 'Books', id: 'books' },
-        { text: 'Movies & Series', id: 'videos' },
+        { text: 'Movies & Shows', id: 'videos' },
         { text: 'Games', id: 'games' }
       ]" />
 
@@ -27,7 +27,7 @@ useHead({
         </blockquote>
         <Shelf dataPath="/api/shelf/books" />
 
-        <h2 id="videos">Movies and Series</h2>
+        <h2 id="videos">Movies & Shows</h2>
         <blockquote>
           <p>
             “There should be a point to movies. Sure, you're giving people a diversion 
