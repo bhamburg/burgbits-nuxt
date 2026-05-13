@@ -24,7 +24,6 @@ import type { ShelfItem, ShelfResponse } from '../../types/shelf';
 
 const SPREADSHEET_ID = '1IAGxWmD6xg5JIaIGPHFIKARA7AigSYSvG5nqlTz15L0';
 const GID = '2002828633';
-
 const SHEET_URL =
   `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}` +
   `/edit?gid=${GID}#gid=${GID}`;

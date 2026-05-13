@@ -5,6 +5,7 @@ export interface ShelfItem {
   coverSrc: string;
   dateFinished?: string;
   rating?: number;         // 1–5 stars
+  releaseYear?: string;
   // Games only
   platforms?: string[];
   firstTime?: boolean;     // true = first playthrough

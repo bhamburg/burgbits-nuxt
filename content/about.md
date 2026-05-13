@@ -1,7 +1,7 @@
 ## About Brian Hamburg
 
-![Hamburg Family](/images/pluto-polynesian.jpg)
-*The Hamburgs in Walt Disney World in 2018*
+![Hamburg Family](/images/hamburgs-2026.jpg)
+*The Hamburgs in Walt Disney World in 2026*
 
 I’m a software engineer, designer, and musician. Most of my days are spent working and playing in Philadelphia where I live with my wife, Andrea, and twin daughters, Elizabeth and Louise. But this is just the tip of the Brian Hamburg iceberg. Within these pages you can learn more about what's going on in my life professionally and recreationally.
 
