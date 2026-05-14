@@ -43,14 +43,14 @@ updated: 2026-05-13
 - [Git](https://git-scm.com/){:target="_blank"}
 - [Node.js](https://nodejs.org/){:target="_blank"}
 - [NPM](https://www.npmjs.com/){:target="_blank"}
-- [Oh My Zsh](https://ohmyz.sh/) (powerlevel10k, shell completion)
+- [Oh My Zsh](https://ohmyz.sh/){:target="_blank"} (powerlevel10k, shell completion)
 - [Visual Studio Code](https://code.visualstudio.com/){:target="_blank"}
 
 ### Creative Tools
 - [Adobe Creative Suite](https://www.adobe.com/creativecloud.html){:target="_blank"}
 - [Affinity](https://affinity.serif.com){:target="_blank"} (Designer, Photo, Publisher)
-- [Claude](https://claude.ai/)
-- [Cursor](https://cursor.com/)
+- [Claude](https://claude.ai/){:target="_blank"}
+- [Cursor](https://cursor.com/){:target="_blank"}
 - [Figma](https://www.figma.com){:target="_blank"}
 - [GarageBand](https://www.apple.com/mac/garageband/){:target="_blank"}
 - [MuseScore](https://musescore.org/){:target="_blank"}

@@ -30,15 +30,16 @@
 </template>
 
 <script setup>
-const { data: photos } = await useFetch('/api/photoFlipper')
+const imageModules = import.meta.glob('/public/images/flipper/*', { eager: true })
+const photos = Object.keys(imageModules).map(k => k.replace('/public', ''))
 
 const heroLoaded = ref(false)
 const flipped = ref(false)
 const flipping = ref(false)
-const photoIndex = ref(Math.floor(Math.random() * (photos.value?.length ?? 1)))
+const photoIndex = ref(Math.floor(Math.random() * photos.length))
 
 onMounted(() => {
-  photos.value?.forEach(src => { new Image().src = src })
+  photos.forEach(src => { new Image().src = src })
   setInterval(flip, 10000)
 })
 
@@ -48,7 +49,7 @@ function flip() {
   flipped.value = !flipped.value
   if (!flipped.value) {
     setTimeout(() => {
-      photoIndex.value = Math.floor(Math.random() * photos.value.length)
+      photoIndex.value = Math.floor(Math.random() * photos.length)
     }, 800)
   }
   setTimeout(() => { flipping.value = false }, 1000)
