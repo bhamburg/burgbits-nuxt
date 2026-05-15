@@ -49,8 +49,8 @@ const sortedShelf = (shelf: any) => {
       }
       if (sortColumn.value === 'platform') {
         return sortDirection.value === 'asc' 
-          ? a.platforms?.at(-1)?.localeCompare(b.platforms?.at(-1)) 
-          : b.platforms?.at(-1)?.localeCompare(a.platforms?.at(-1))
+          ? a.platform?.localeCompare(b.platform) 
+          : b.platform?.localeCompare(a.platform)
       }
       if (sortColumn.value === 'rating') {
         return sortDirection.value === 'asc' 
@@ -106,9 +106,9 @@ watchEffect(() => {
         <NuxtLink v-for="item in shelf.items.slice(0, 23)" :key="item.title+'-'+item.dateFinished" :title="
             item.title  
             + (item.author ? ` - ${item.author}` : '') 
-            + (item.platforms?.length ? ` - ${item.platforms.at(-1)}` : '')
+            + (item.platform ? ` - ${item.platform}` : '')
             + (item.firstTime ? ' - First Playthrough' : '')
-            + (item.completionLevel === 'A' ? ' - 100% Completion' : '')
+            + (item.completed ? ' - 100% Completion' : '')
             + (item.dateFinished ? ` - Finished on ${item.dateFinished}` : '')
             + (item.rating ? ` - ${item.rating} out of 5 stars` : '')
           " :to="item.url" 
@@ -149,7 +149,7 @@ watchEffect(() => {
           />
           <div v-if="!shelf.title.toLowerCase().includes('current')">
             <div class="flex overflow-hidden w-24 absolute bottom-6">
-              <div v-if="item.firstTime" :class="item.completionLevel === 'A' ? 'w-1/2' : 'w-full'" class="
+              <div v-if="item.firstTime" :class="item.completed ? 'w-1/2' : 'w-full'" class="
                 bg-emerald-500 
                 text-white 
                 text-[0.5rem] 
@@ -159,7 +159,7 @@ watchEffect(() => {
                 NEW
               </div>
               <div 
-                v-if="item.completionLevel === 'A' && item.firstTime" 
+                v-if="item.completed && item.firstTime" 
                 class="
                   border-t-0
                   border-b-0
@@ -173,7 +173,7 @@ watchEffect(() => {
                   bottom-[-3.5px]
                   left-10"
               />
-              <div v-if="item.completionLevel === 'A'" :class="item.firstTime ? 'w-1/2' : 'w-full'" class="
+              <div v-if="item.completed === 'A'" :class="item.firstTime ? 'w-1/2' : 'w-full'" class="
                   bg-sky-600 
                   text-white 
                   text-[0.5rem] 
@@ -187,7 +187,7 @@ watchEffect(() => {
             <span v-for="star in item.rating" :key="star">★</span>
           </div>
         </NuxtLink>
-        <NuxtLink v-if="shelf.items.length > 17" :to="shelf.fetchedFrom" target="_blank" 
+        <NuxtLink v-if="shelf.items.length > 17" :to="shelf.viewAll" target="_blank" 
           class="flex items-center text-center font-bold capitalize justify-center h-[144px] w-24 mx-3 mb-12
             bg-gradient-to-l hover:bg-gradient-to-r text-white hover:text-white from-sky-600 to-emerald-400 dark:from-indigo-900 dark:to-black 
             drop-shadow-md hover:drop-shadow-lg no-underline hover:scale-105">
@@ -276,7 +276,7 @@ watchEffect(() => {
               <td v-if="item.title" class="p-2">
                 <NuxtLink :to="item.url" target="_blank">{{ item.title }}</NuxtLink>
               </td>
-              <td v-if="item.platforms" class="p-2">{{ item.platforms?.at(-1) }}</td>
+              <td v-if="item.platform" class="p-2">{{ item.platform }}</td>
               <td v-if="item.author" class="p-2">{{ item.author }}</td>
               <td v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('finished')" 
                 class="text-emerald-500 text-center text-2xl p-2">
@@ -284,7 +284,7 @@ watchEffect(() => {
               </td>
               <td v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('finished')" 
                 class="text-sky-600 text-center text-2xl p-2">
-                <span v-if="item.completionLevel === 'A'" class="cursor-help" title="100% completion">✔</span>
+                <span v-if="item.completed === 'A'" class="cursor-help" title="100% completion">✔</span>
               </td>
               <td v-if="!shelf.title.toLowerCase().includes('current')" class="p-2 text-xl text-center">
                 <span v-for="star in item.rating" :key="star">★</span>
@@ -296,7 +296,7 @@ watchEffect(() => {
       <div v-if="isTable" class="flex justify-center my-4 text-sm">
         <NuxtLink 
           v-if="shelf.items.length > 17" 
-          :to="shelf.fetchedFrom" 
+          :to="shelf.viewAll" 
           target="_blank"
         >
           View all

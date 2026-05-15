@@ -7,9 +7,9 @@ export interface ShelfItem {
   rating?: number;         // 1–5 stars
   releaseYear?: string;
   // Games only
-  platforms?: string[];
-  firstTime?: boolean;     // true = first playthrough
-  completionLevel?: string; // "A" = 100% completion
+  platform?: string;
+  firstTime?: string;     // 'true' = first playthrough
+  completed?: string;     // 'true' = 100% completion
   // Books only
   author?: string;
 }

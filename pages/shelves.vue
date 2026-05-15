@@ -45,7 +45,7 @@ useHead({
             <em class="text-nowrap">— Shigeru Miyamoto</em>
           </p>
         </blockquote>
-        <Shelf dataPath="/data/shelves/games.json" />
+        <Shelf dataPath="/api/shelf/games" />
       </article>
     </div>
   </Section>

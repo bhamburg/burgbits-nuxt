@@ -47,7 +47,12 @@ function makeShelves(items: ShelfItem[]): Shelf[] {
   }
   if (items.filter((item) => !!item.dateFinished).length > 0) {
     shelves.push({
-      items: items.filter((item) => !!item.dateFinished),
+      items: items.filter((item) => !!item.dateFinished).sort((a, b) => {
+        // Sort recently watched shelf by dateFinished, most recent first
+        if (!a.dateFinished) return 1;
+        if (!b.dateFinished) return -1;
+        return new Date(b.dateFinished).getTime() - new Date(a.dateFinished).getTime();
+      }),
       title: 'Recently Watched',
       viewAll: SHEET_URL,
     });
