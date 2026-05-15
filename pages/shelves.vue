@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Shelves - BurgBits'
+  title: 'Shelves - Brian Hamburg'
 })
 </script>
 
@@ -13,7 +13,7 @@ useHead({
       
       <OnThisPage :links="[
         { text: 'Books', id: 'books' },
-        { text: 'Films', id: 'films' },
+        { text: 'Movies & Shows', id: 'videos' },
         { text: 'Games', id: 'games' }
       ]" />
 
@@ -25,9 +25,9 @@ useHead({
             <em class="text-nowrap">— Mark Twain</em>
           </p>
         </blockquote>
-        <Shelf api="/api/books" />
+        <Shelf dataPath="/api/shelf/books" />
 
-        <h2 id="films">Films</h2>
+        <h2 id="videos">Movies & Shows</h2>
         <blockquote>
           <p>
             “There should be a point to movies. Sure, you're giving people a diversion 
@@ -36,7 +36,7 @@ useHead({
             <em class="text-nowrap">— George Lucas</em>
           </p>
         </blockquote>
-        <Shelf api="/api/films" />
+        <Shelf dataPath="/api/shelf/videos" />
 
         <h2 id="games">Games</h2>
         <blockquote>
@@ -45,7 +45,7 @@ useHead({
             <em class="text-nowrap">— Shigeru Miyamoto</em>
           </p>
         </blockquote>
-        <Shelf api="/api/games" />
+        <Shelf dataPath="/api/shelf/games" />
       </article>
     </div>
   </Section>

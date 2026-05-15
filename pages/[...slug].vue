@@ -1,21 +1,29 @@
+<script setup lang="ts">
+import { formatDate } from '~/utils/contentHelpers';
+</script>
+
 <template>
   <ContentDoc>
     <template v-slot="{ doc }">
       <Jumbotron>
-        <h1>{{ doc.title }}</h1>
+        <div class="flex flex-col">
+          <p v-if="doc.date" class="text-sm font-mono text-zinc-100 mb-2">
+            {{ formatDate(doc.date) }}
+          </p>
+          <p v-if="doc.updated" class="text-sm font-mono text-zinc-100 mb-2">
+            Last updated: {{ formatDate(doc.updated) }}
+          </p>
+          <h2>{{ doc.title }}</h2>
+          <p v-if="doc.subtitle" class="text-2xl text-zinc-200">
+            {{ doc.subtitle }}
+          </p>
+        </div>
       </Jumbotron>
       <Section>
         <div class="flex flex-col lg:flex-row-reverse">
-
-          <OnThisPage :links="doc?.body?.toc?.links" />
-        
+          <OnThisPage :links="doc?.body?.toc?.links" :isPost="doc?._path?.startsWith('/posts')" />
           <article class="lg:w-[75%] lg:mr-auto mt-4">
-            <img v-if="doc.featuredImage" class="lg:mt-10 mb-4" :src="doc.featuredImage"></img>
-            <p v-if="doc.date" class="lg:mt-10">
-              Posted: {{ new Date(doc.date).toLocaleDateString('en-us', { 
-                weekday:"long", year:"numeric", month:"short", day:"numeric"
-              }) }}
-            </p>
+            <img v-if="doc.featuredImage" class="lg:mt-10 mb-4" :src="doc._path + '/' + doc.featuredImage" :alt="doc.title"></img>
             <ContentRenderer :value="doc" />
           </article>
         </div>

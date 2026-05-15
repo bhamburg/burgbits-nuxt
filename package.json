@@ -31,6 +31,7 @@
     "node-html-parser": "^6.1.13",
     "nuxt-content-assets": "^1.4.4",
     "nuxt-proxy": "^0.4.1",
-    "rss-parser": "^3.13.0"
+    "rss-parser": "^3.13.0",
+    "sharp": "^0.34.5"
   }
 }

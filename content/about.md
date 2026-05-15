@@ -1,7 +1,7 @@
 ## About Brian Hamburg
 
-![Hamburg Family](/images/pluto-polynesian.jpg)
-*The Hamburgs in Walt Disney World in 2018*
+![Hamburg Family](/images/hamburgs-2026.jpg)
+*The Hamburgs in Walt Disney World in 2026*
 
 I’m a software engineer, designer, and musician. Most of my days are spent working and playing in Philadelphia where I live with my wife, Andrea, and twin daughters, Elizabeth and Louise. But this is just the tip of the Brian Hamburg iceberg. Within these pages you can learn more about what's going on in my life professionally and recreationally.
 
@@ -17,7 +17,7 @@ Ultimately I'm just trying to balance being a father, husband, son, web professi
 
 ### Summary
 
-With over a decade of experience building user interfaces for the Web and providing technical support, my focus has always been to remove friction from the user experience with an appreciation for both accessibility and aesthetics.
+With over two decades of experience building user interfaces for the Web and providing technical support, my focus has always been to remove friction from the user experience with an appreciation for both accessibility and aesthetics.
 
 Key technologies used include vanilla JS, Vue, Angular, React, jQuery, Sass/CSS, and Bootstrap on the front end; Adobe Experience Manager (AEM) with HTL (Sightly) templates written in Java/Apache Sling on the back end; automated testing with Cypress, Vitest, Vue Test Utils, JUnit, and Jasmine; and Git, GitHub Actions, and Jenkins for CI/CD.
 

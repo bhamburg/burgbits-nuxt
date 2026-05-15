@@ -6,13 +6,13 @@
       bg-transparent
       no-underline 
       font-mono
-      text-sky-800
+      text-sky-700
       hover:text-white 
       dark:text-white
-      hover:bg-sky-800
+      hover:bg-sky-700
       dark:hover:bg-indigo-300
       outline 
-      outline-sky-800 
+      outline-sky-700 
       dark:outline-indigo-300 
       mt-4
       mx-2

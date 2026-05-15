@@ -1,13 +1,19 @@
 <script setup lang="ts">
+import { formatDate } from '~/utils/contentHelpers';
+
 const props = defineProps({
   alwaysGrid: Boolean,
   alwaysTable: Boolean,
-  api: String,
+  dataPath: String,
   grid: Boolean,
   table: Boolean
 })
 
-const { status, data: data } = await useLazyFetch<any>(props.api!)
+const source = props.dataPath
+const { status, data: data } = useFetch<any>(source!, {
+  server: false,
+  lazy: true,
+})
 
 const isTable = ref(false)
 const sortColumn = ref('dateFinished')
@@ -43,8 +49,8 @@ const sortedShelf = (shelf: any) => {
       }
       if (sortColumn.value === 'platform') {
         return sortDirection.value === 'asc' 
-          ? a.platforms?.at(-1)?.localeCompare(b.platforms?.at(-1)) 
-          : b.platforms?.at(-1)?.localeCompare(a.platforms?.at(-1))
+          ? a.platform?.localeCompare(b.platform) 
+          : b.platform?.localeCompare(a.platform)
       }
       if (sortColumn.value === 'rating') {
         return sortDirection.value === 'asc' 
@@ -74,7 +80,7 @@ watchEffect(() => {
     Loading shelf...
   </div>
   <div v-else class=" font-mono bg-zinc-100 dark:bg-zinc-700 p-4 mb-4 rounded-lg shadow">
-    <div v-for="shelf in data.shelves">
+    <div v-for="shelf in data?.shelves">
       <div class="flex flex-col justify-between items-center mb-4 md:flex-row">
         <h3 class="font-sans mt-3 mb-3">{{ shelf.title }}</h3>
         <div v-if="!props.alwaysTable && !props.alwaysGrid">
@@ -97,12 +103,12 @@ watchEffect(() => {
 
       <!-- grid view -->
       <div v-show="!isTable" class="flex flex-row flex-wrap items-end justify-center md:justify-start no-underline">
-        <NuxtLink v-for="item in shelf.items.slice(0, 17)" :key="item.title+'-'+item.dateFinished" :title="
+        <NuxtLink v-for="item in shelf.items.slice(0, 23)" :key="item.title+'-'+item.dateFinished" :title="
             item.title  
             + (item.author ? ` - ${item.author}` : '') 
-            + (item.platforms?.length ? ` - ${item.platforms.at(-1)}` : '')
+            + (item.platform ? ` - ${item.platform}` : '')
             + (item.firstTime ? ' - First Playthrough' : '')
-            + (item.completionLevel === 'A' ? ' - 100% Completion' : '')
+            + (item.completed ? ' - 100% Completion' : '')
             + (item.dateFinished ? ` - Finished on ${item.dateFinished}` : '')
             + (item.rating ? ` - ${item.rating} out of 5 stars` : '')
           " :to="item.url" 
@@ -143,7 +149,7 @@ watchEffect(() => {
           />
           <div v-if="!shelf.title.toLowerCase().includes('current')">
             <div class="flex overflow-hidden w-24 absolute bottom-6">
-              <div v-if="item.firstTime" :class="item.completionLevel === 'A' ? 'w-1/2' : 'w-full'" class="
+              <div v-if="item.firstTime === 'yes'" :class="item.completed === 'yes' ? 'w-1/2' : 'w-full'" class="
                 bg-emerald-500 
                 text-white 
                 text-[0.5rem] 
@@ -153,7 +159,7 @@ watchEffect(() => {
                 NEW
               </div>
               <div 
-                v-if="item.completionLevel === 'A' && item.firstTime" 
+                v-if="item.completed === 'yes' && item.firstTime === 'yes'" 
                 class="
                   border-t-0
                   border-b-0
@@ -167,7 +173,7 @@ watchEffect(() => {
                   bottom-[-3.5px]
                   left-10"
               />
-              <div v-if="item.completionLevel === 'A'" :class="item.firstTime ? 'w-1/2' : 'w-full'" class="
+              <div v-if="item.completed === 'yes'" :class="item.firstTime === 'yes' ? 'w-1/2' : 'w-full'" class="
                   bg-sky-600 
                   text-white 
                   text-[0.5rem] 
@@ -181,7 +187,7 @@ watchEffect(() => {
             <span v-for="star in item.rating" :key="star">★</span>
           </div>
         </NuxtLink>
-        <NuxtLink v-if="shelf.items.length > 17" :to="shelf.fetchedFrom" target="_blank" 
+        <NuxtLink v-if="shelf.items.length > 17" :to="shelf.viewAll" target="_blank" 
           class="flex items-center text-center font-bold capitalize justify-center h-[144px] w-24 mx-3 mb-12
             bg-gradient-to-l hover:bg-gradient-to-r text-white hover:text-white from-sky-600 to-emerald-400 dark:from-indigo-900 dark:to-black 
             drop-shadow-md hover:drop-shadow-lg no-underline hover:scale-105">
@@ -270,7 +276,7 @@ watchEffect(() => {
               <td v-if="item.title" class="p-2">
                 <NuxtLink :to="item.url" target="_blank">{{ item.title }}</NuxtLink>
               </td>
-              <td v-if="item.platforms" class="p-2">{{ item.platforms?.at(-1) }}</td>
+              <td v-if="item.platform" class="p-2">{{ item.platform }}</td>
               <td v-if="item.author" class="p-2">{{ item.author }}</td>
               <td v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('finished')" 
                 class="text-emerald-500 text-center text-2xl p-2">
@@ -278,7 +284,7 @@ watchEffect(() => {
               </td>
               <td v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('finished')" 
                 class="text-sky-600 text-center text-2xl p-2">
-                <span v-if="item.completionLevel === 'A'" class="cursor-help" title="100% completion">✔</span>
+                <span v-if="item.completed === 'yes'" class="cursor-help" title="100% completion">✔</span>
               </td>
               <td v-if="!shelf.title.toLowerCase().includes('current')" class="p-2 text-xl text-center">
                 <span v-for="star in item.rating" :key="star">★</span>
@@ -290,7 +296,7 @@ watchEffect(() => {
       <div v-if="isTable" class="flex justify-center my-4 text-sm">
         <NuxtLink 
           v-if="shelf.items.length > 17" 
-          :to="shelf.fetchedFrom" 
+          :to="shelf.viewAll" 
           target="_blank"
         >
           View all
@@ -298,12 +304,7 @@ watchEffect(() => {
       </div>
     </div>
     <p class="my-2 text-sm text-center text-zinc-500">
-      <span>Powered by <NuxtLink :to="data.profileUrl" target="_blank">{{ data.appName }}</NuxtLink></span><br />
-        Last fetched:
-        {{ new Date(data.fetched).toLocaleDateString('en-gb', {
-          weekday:"long", year:"numeric", month:"long", day:"numeric"
-        }) }}
-        at {{ new Date(data.fetched).toLocaleTimeString('en-gb') }}
+        Last updated: {{ formatDate(data?.lastUpdated) }}
     </p>
   </div>
 </template>
