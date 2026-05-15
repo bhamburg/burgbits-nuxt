@@ -80,7 +80,7 @@ watchEffect(() => {
     Loading shelf...
   </div>
   <div v-else class=" font-mono bg-zinc-100 dark:bg-zinc-700 p-4 mb-4 rounded-lg shadow">
-    <div v-for="shelf in data.shelves">
+    <div v-for="shelf in data?.shelves">
       <div class="flex flex-col justify-between items-center mb-4 md:flex-row">
         <h3 class="font-sans mt-3 mb-3">{{ shelf.title }}</h3>
         <div v-if="!props.alwaysTable && !props.alwaysGrid">
@@ -149,7 +149,7 @@ watchEffect(() => {
           />
           <div v-if="!shelf.title.toLowerCase().includes('current')">
             <div class="flex overflow-hidden w-24 absolute bottom-6">
-              <div v-if="item.firstTime" :class="item.completed ? 'w-1/2' : 'w-full'" class="
+              <div v-if="item.firstTime === 'yes'" :class="item.completed === 'yes' ? 'w-1/2' : 'w-full'" class="
                 bg-emerald-500 
                 text-white 
                 text-[0.5rem] 
@@ -159,7 +159,7 @@ watchEffect(() => {
                 NEW
               </div>
               <div 
-                v-if="item.completed && item.firstTime" 
+                v-if="item.completed === 'yes' && item.firstTime === 'yes'" 
                 class="
                   border-t-0
                   border-b-0
@@ -173,7 +173,7 @@ watchEffect(() => {
                   bottom-[-3.5px]
                   left-10"
               />
-              <div v-if="item.completed === 'A'" :class="item.firstTime ? 'w-1/2' : 'w-full'" class="
+              <div v-if="item.completed === 'yes'" :class="item.firstTime === 'yes' ? 'w-1/2' : 'w-full'" class="
                   bg-sky-600 
                   text-white 
                   text-[0.5rem] 
@@ -284,7 +284,7 @@ watchEffect(() => {
               </td>
               <td v-if="!shelf.title.toLowerCase().includes('current') && shelf.title.toLowerCase().includes('finished')" 
                 class="text-sky-600 text-center text-2xl p-2">
-                <span v-if="item.completed === 'A'" class="cursor-help" title="100% completion">✔</span>
+                <span v-if="item.completed === 'yes'" class="cursor-help" title="100% completion">✔</span>
               </td>
               <td v-if="!shelf.title.toLowerCase().includes('current')" class="p-2 text-xl text-center">
                 <span v-for="star in item.rating" :key="star">★</span>
@@ -304,7 +304,7 @@ watchEffect(() => {
       </div>
     </div>
     <p class="my-2 text-sm text-center text-zinc-500">
-        Last updated: {{ formatDate(data.lastUpdated) }}
+        Last updated: {{ formatDate(data?.lastUpdated) }}
     </p>
   </div>
 </template>

@@ -83,7 +83,7 @@ export default defineCachedEventHandler(
   },
   {
     maxAge: 60 * 60,
-    name: 'shelf-films',
-    getKey: () => 'films',
+    name: 'shelf-games',
+    getKey: () => 'games',
   },
 );
