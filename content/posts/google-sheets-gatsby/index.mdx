@@ -12,7 +12,7 @@ published: true
 
 One of the reasons I love working with Gatsby specifically, and React in general, is how easy it usually is to find a plugin to solve whatever problem you're trying to solve. I'm a big fan of not reinventing the wheel. Chances are, you're not the first developer in the world who has come up against a certain use case, so it's usually just a matter of building off of someone else's solution. It turns out that it's very easy to set up an ad hoc backend for Gatsby with Google Sheets by using the [gatsby-source-google-spreadsheets](https://www.gatsbyjs.com/plugins/gatsby-source-google-spreadsheets/) plugin by [Cian Butler](https://github.com/butlerx).
 
-### The Query
+## The Query
 
 Following the [instructions on the plugin's page](https://www.gatsbyjs.com/plugins/gatsby-source-google-spreadsheets/), it's simple enough to configure. The only gotcha which I will go into detail below is using a Google Sheets API key in your Gatsby site. Once configured, you should see your specified spreadsheet show up in the GraphQL query explorer, which can be found at `http://localhost:8000/___graphql` if you've run `gatsby develop` from the command line. 
 
@@ -35,7 +35,7 @@ const data = useStaticQuery(graphql`
 `)
 ```
 
-### Mapping the Results
+## Mapping the Results
 
 With the query established, using the React hook, `useState`, to set the starting year for my [Bootstrap](https://react-bootstrap.github.io/) tabs, it's just a matter of iterating through the data with `map()`. In the example below, I've separated the data into tabs by year, so I first iterate through the `years` array before iterating through the query data, only returning entries that match the selected year. This is a sample of my completed [reading list](/reads) JSX:
 
@@ -116,7 +116,7 @@ const ReadsPage = props => {
 export default ReadsPage
 ```
 
-### Environment Variables
+## Environment Variables
 
 As mentioned above, the one gotcha I ran into using the latest version of Google Sheets API and [gatsby-source-google-spreadsheets](https://www.gatsbyjs.com/plugins/gatsby-source-google-spreadsheets/) is the need to use an API key. While it's a trivial task to set up a free API key in Google's developer console, I made the rookie move of including said API key in my source code. 😬 This was immediately flagged by Github as a security risk and I quickly got a crash course in Gatsby/Gatsby Cloud environment variables. Fortunately, they really do make it easy ([see documentation](https://www.gatsbyjs.com/docs/how-to/local-development/environment-variables/)). 
 
@@ -135,7 +135,7 @@ For my local build, I simply had to create a `src/.env.development` file with th
 // ...
 ```
 
-### Going Forward
+## Going Forward
 
 Knowing what I now know about GraphQL makes me want to do a full rewrite of [String Band Database](http://stringbanddatabase.com/), a project I initially wrote in jQuery back in [2013](https://mummers.github.io/stringbands/sbdb-1.0/index.html) using a plugin called [Sheetrock](https://chriszarate.github.io/sheetrock/) that allows you to do SQL-like queries against a public Google spreadsheet. The project has since been moved over to Github Pages and is spearheaded by my fellow banjo player and web developer, [TJ Ferry](https://tjferry.com), who has done a bang-up job adding new features and curating the content. 
 

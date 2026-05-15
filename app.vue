@@ -1,8 +1,17 @@
 <script setup lang="ts">
 useHead({
-  titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} - Brian Hamburg` : 'Brian Hamburg | Software Engineer, Designer, Musician'
-  }
+  titleTemplate: (titleChunk) =>
+    titleChunk ? `${titleChunk} - Brian Hamburg` : 'Brian Hamburg | Software Engineer, Designer, Musician',
+  link: [
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com',
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap',
+    },
+  ],
 })
 </script>
 
@@ -17,83 +26,112 @@ useHead({
 </template>
 
 <style lang="postcss">
+
+/* ── Design tokens ──────────────────────────────────────────────────────────── */
+
+:root {
+  --font-display: 'DM Serif Display', serif;
+  --font-code:    'JetBrains Mono', monospace;
+  --accent:       #378ADD;
+  --accent-hover: #2d7bc4;
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────────── */
+
 html {
   @apply scroll-smooth;
 }
+
+/* ── Content regions ────────────────────────────────────────────────────────── */
+
 section, footer {
+
   article {
     @apply mx-2;
-    p:first-child {
-      @apply mt-4 md:mt-10
-    }
+    p:first-child { @apply mt-4 md:mt-10; }
   }
-  h2 {
-    @apply font-black text-3xl md:text-4xl mb-6 mt-8 md:mt-10 scroll-mt-20;
-  }
-  h3 {
-    @apply font-black text-2xl scroll-mt-20;
-  }
-  h4 {
-    @apply font-black text-xl scroll-mt-20;
-  }
-  h5, h6 {
+
+  /* Headings — shared rules first, then per-level overrides */
+  h1, h2, h3, h4, h5, h6 {
     @apply font-black scroll-mt-20;
+    a { @apply text-inherit hover:text-inherit no-underline; }
   }
-  h3, p, ul, blockquote, pre  {
-    @apply mb-6;
-  }
+  h1 { @apply text-4xl md:text-5xl mb-6 mt-8 md:mt-10; }
+  h2 { @apply text-3xl  md:text-4xl mb-6 mt-8 md:mt-10; }
+  h3 { @apply text-2xl  mb-6; }
+  h4 { @apply text-xl   mb-4; }
+
+  /* Flow spacing */
+  p, ul, blockquote, pre { @apply mb-6; }
+
+  /* Links */
   a {
-    @apply text-sky-700
-      hover:text-sky-600 
-      dark:text-indigo-300
-      dark:hover:text-indigo-500
-      underline;
+    @apply underline transition-colors duration-150
+           text-sky-600 hover:text-sky-500
+           dark:text-indigo-300 dark:hover:text-indigo-200;
   }
-  blockquote {
-    @apply flex 
-      flex-col 
-      p-6 
-      text-center 
-      md:text-xl 
-      rounded-lg
-      font-mono
-      bg-gradient-to-l
-      text-black 
-      dark:text-white 
-      from-sky-200 
-      to-emerald-100 
-      dark:from-indigo-950 
-      dark:to-black
-      shadow;
-      p, p:first-child {
-        @apply m-0;
-      }
-  }
+
+  /* Lists */
   ul {
     @apply list-disc ml-4;
-    ul {
-      @apply my-0 list-[circle];
-    }
+    ul { @apply my-0 list-[circle]; }
   }
-  ol {
-    @apply list-decimal;
+  ol { @apply list-decimal ml-4; }
+
+  /* Blockquote — left-border editorial style, consistent with card system */
+  blockquote {
+    font-family: var(--font-code);
+    @apply p-6 rounded-xl text-center md:text-xl
+           border-l-4 border-l-sky-500 dark:border-l-indigo-500
+           border-r-4 border-r-emerald-400 dark:border-r-purple-500
+           bg-zinc-50 dark:bg-zinc-900
+           text-zinc-700 dark:text-zinc-300
+           shadow-sm;
+    p, p:first-child { @apply m-0; }
   }
-  h1, h2, h3, h4 {
-    a {
-      @apply text-inherit hover:text-inherit no-underline;
-    }
-  }
+
+  /* Images + captions */
   img {
     @apply rounded-lg w-full shadow;
   }
   img + em {
-    @apply italic text-zinc-500 text-sm;
+    @apply block mt-1 mb-6 italic text-sm text-zinc-400 dark:text-zinc-500;
   }
+
+  /* Inline code */
+  code:not(pre code) {
+    font-family: var(--font-code);
+    @apply text-[0.85em] px-1.5 py-0.5 rounded
+           bg-zinc-100 dark:bg-zinc-800
+           border border-zinc-200 dark:border-zinc-700
+           text-zinc-800 dark:text-zinc-200;
+  }
+
+  /* Code blocks */
   pre {
-    @apply bg-black text-white p-4 rounded-lg overflow-auto shadow;
+    font-family: var(--font-code);
+    @apply text-sm leading-relaxed
+           p-5 rounded-xl overflow-auto shadow
+           bg-zinc-950 text-zinc-100;
   }
+
+  /* Cards (markdown-embeddable, mirrors component styles) */
+  .card {
+    @apply relative overflow-hidden rounded-xl p-6
+           bg-white dark:bg-zinc-900
+           border border-zinc-200 dark:border-zinc-800
+           transition-transform duration-200 hover:-translate-y-1;
+    &::before {
+      content: '';
+      @apply absolute top-0 left-0 right-0 h-[3px] rounded-t-xl;
+    }
+    h3 { @apply text-base font-medium mb-2.5; }
+    p  { @apply text-sm leading-relaxed text-zinc-500 dark:text-zinc-400 mb-4; }
+  }
+
+  /* Video embeds */
   .video-container {
-    @apply relative mb-6 pb-[56.25%] h-0 overflow-hidden shadow;
+    @apply relative mb-6 pb-[56.25%] h-0 overflow-hidden rounded-xl shadow;
     embed, iframe, object {
       @apply absolute top-0 left-0 w-full h-full;
     }

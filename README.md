@@ -2,17 +2,36 @@
 
 ![homepage banner](public/images/home.png)
 
-Hi there! 👋 
+My personal blog and corner of the web — built to write about things I find interesting and share what I'm learning.
 
-Welcome to my readme file. This is the repo for my personal blog, [bhamburg.com](https://bhamburg.com). Feel free to take a look around and let me know what you think at [bhamburg@gmail.com](mailto:bhamburg@gmail.com). Thanks!
+👉 **[bhamburg.com](https://bhamburg.com)**
+
+## About
+
+This is the source for my personal site. It's a place for writing, experimenting, and occasionally embarrassing myself publicly. If something catches your eye or you want to say hi, drop me a line at [bhamburg@gmail.com](mailto:bhamburg@gmail.com).
 
 ## Tech Stack
 
-- [Vue.js](https://vuejs.org/)
-- [Nuxt](https://www.nuxt.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Netlify](https://netlify.com/)
+| Layer | Tool |
+|---|---|
+| Framework | [Vue.js](https://vuejs.org/) |
+| Meta-framework | [Nuxt](https://nuxt.com/) |
+| Styling | [Tailwind CSS](https://tailwindcss.com/) |
+| Hosting | [Netlify](https://netlify.com/) |
+
+## Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+```
 
 ## License
 
-This project is open-source under the MIT license.
+Open-source under the [MIT License](LICENSE). Feel free to poke around, borrow ideas, or tell me what I did wrong.

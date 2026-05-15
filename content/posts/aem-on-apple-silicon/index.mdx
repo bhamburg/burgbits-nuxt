@@ -15,7 +15,7 @@ Both the MacBook Air and Pro got some great reviews, with the former as a fanles
 
 I digress: I ended up with a space-gray MacBook Air with 16 GB of RAM. It's so dang fast at everything! As with any bleeding-edge technology, I was a bit unsure how my workflow would adapt to the new platform. Fortunately, many of the tools I use every day as a developer have already been ported to the new Apple chips, and the others run in x86 emulation without any perceptible lag. In other words, with a tiny bit of research, I was able to get Adobe Experience Manager and Node up running quickly, _and fast_. Here's what I had to do for AEM:
 
-### Java
+## Java
 Most of the projects I touch at Jefferson rely on JDK 8. The kind folks at [Azul](https://www.azul.com) have already ported their Zulu OpenJDK for Apple Silicon (labeled as AArch64). It can be dowloaded for free from https://www.azul.com/downloads/zulu-community/?package=jdk
 
 Once installed, you have to set the `$JAVA_HOME` variable to the correct path in your `~/.zshrc` or `~/.bash` file as such:
@@ -26,17 +26,17 @@ Once installed, you have to set the `$JAVA_HOME` variable to the correct path in
 JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu8.50.0.1017-ca-jdk8.0.275-macos_aarch64
 export JAVA_HOME;
 ```
-### Homebrew
+## Homebrew
 I've found Homebrew the best way to install Maven on a Mac. I highly recommend reading Sam Soffes' blog post, _[Homebrew on Apple Silicon](https://soffes.blog/homebrew-on-apple-silicon)_, if you intend to go this route.
 
-### Maven
+## Maven
 At the time of this writing, Apache Maven doesn't yet run under the M1 chip natively, but it's pretty simple to install Maven running on Rosetta 2 via Homebrew. 
 ```console
 arch -x86_64 brew install maven
 ```
 Anecdotally, Maven emulated on Rosetta 2 building projects for Java running on AArch64 is slightly _faster_ than doing the same task in Ubuntu running within WSL 1 on my Ryzen 3700x Windows 10 PC. The projects I typically work on for Jefferson shaved a few seconds off their build time in this environment. 👍
 
-### .jar Files in Big Sur
+## .jar Files in Big Sur
 
 One "gotcha" I ran into running these versions of Open JDK on Big Sur is that the usual way of starting AEM, double-clicking on the `AEM_6.5_Quickstart.jar` file, doesn't do much of anything. "The operating couldn't be completed. Unable to locate a Java Runtime." Java isn't installed on this machine by default and I haven't yet figured out how to get macOS to point to my Zulu OpenJDK install. I was able to get around this by running the `.jar` from the command line. Navigating to the folder or typing the entire path can become tedious so I set an alias to AEM quickstart in my `~/.zshrc` file. Unless there is a workaround for launching the GUI version, this is how I'm going to be firing up my local AEM instance on the M1.
 ```shell
@@ -45,5 +45,5 @@ One "gotcha" I ran into running these versions of Open JDK on Big Sur is that th
 alias aem='java -jar /Users/burgbits/AEM/6.5/AEM_6.5_Quickstart.jar'
 ```
 
-### Conclusion, for now
+## Conclusion, for now
 With native Apple Silicon versions of my favorite tools on the way, like VS Code, Node.js, and Adobe Photoshop, what is already a great development experience can only improve as they already run pretty great in Rosetta 2. At this point, I don't use Docker much, but I understand that it doesn't work at all on M1 Macs yet. Also, I don't know if that's a software or hardware thing, but there is no native support for more than one external monitor. Your mileage may vary, but there are really no deal breakers for my setup and I fully recommend these machines for most people. 😁💻
