@@ -5,7 +5,7 @@
     title="Click me!"
   >
     <div class="flip-card-inner">
-      <div class="flip-card-front rounded-full bg-slate-700 border-8 border-white shadow-inner">
+      <div class="flip-card-front rounded-full bg-slate-700 border-4 border-white shadow-inner">
         <ClientOnly>
           <NuxtImg
             src="/images/brian-hamburg-profile-photo-DICE2019.jpeg"
@@ -16,7 +16,7 @@
           />
         </ClientOnly>
       </div>
-      <div class="flip-card-back rounded-full bg-white border-8 border-white">
+      <div class="flip-card-back rounded-full bg-white border-4 border-white">
         <ClientOnly>
           <NuxtImg
             class="rounded-full w-full"
