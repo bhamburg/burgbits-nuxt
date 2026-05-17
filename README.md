@@ -1,10 +1,10 @@
-# bhamburg.com
+# burgbits
 
 ![homepage banner](public/images/home.png)
 
 My personal blog and corner of the web — built to write about things I find interesting and share what I'm learning.
 
-👉 **[bhamburg.com](https://bhamburg.com)**
+👉 **[burgbits](https://burgbits.com)**
 
 ## About
 

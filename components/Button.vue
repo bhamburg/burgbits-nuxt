@@ -1,8 +1,39 @@
+<script setup lang="ts">
+const props = defineProps<{
+  href?: string
+  download?: string
+}>()
+
+const isExternal = computed(() =>
+  !!props.href && (props.href.startsWith('http') || props.href.startsWith('//'))
+)
+</script>
+
 <template>
-  <NuxtLink 
-    type="button" 
-    class="
-      inline-block
+  <a
+    v-if="isExternal || download"
+    :href="href"
+    :download="download"
+    :target="isExternal ? '_blank' : undefined"
+    :rel="isExternal ? 'noopener noreferrer' : undefined"
+    class="nuxt-link"
+  >
+    <slot />
+  </a>
+  <NuxtLink
+    v-else
+    :to="href"
+    class="nuxt-link"
+  >
+    <slot />
+  </NuxtLink>
+</template>
+
+<style lang="postcss" scoped>
+.nuxt-link {
+  @apply inline-flex
+      items-center
+      gap-1.5
       bg-transparent
       no-underline 
       font-mono
@@ -20,15 +51,10 @@
       px-4 
       rounded-full 
       transition-colors
-      shadow
-    ">
-    <slot />
-  </NuxtLink>
-</template>
-
-<style lang="postcss" scoped>
+      shadow;
+  }
   .solid {
-    @apply text-white !outline-none bg-sky-600  hover:bg-sky-500 dark:bg-black dark:hover:bg-zinc-900 py-3 px-5
+    @apply text-white !outline-none bg-sky-600 hover:bg-sky-500 dark:bg-indigo-500 dark:hover:bg-indigo-400 py-3 px-5
   }
   .jumbotron a {
     @apply text-white outline-white hover:text-sky-800 hover:bg-white dark:hover:text-indigo-900

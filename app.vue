@@ -3,24 +3,31 @@ useHead({
   titleTemplate: (titleChunk) =>
     titleChunk ? `${titleChunk} - Brian Hamburg` : 'Brian Hamburg | Software Engineer, Designer, Musician',
   link: [
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.googleapis.com',
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap',
-    },
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap' },
   ],
+})
+
+useSeoMeta({
+  description:        'Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.',
+  ogSiteName:         'burgbits',
+  ogType:             'website',
+  ogUrl:              'https://burgbits.com',
+  ogImage:            'https://burgbits.com/images/home.png',
+  ogImageWidth:       1200,
+  ogImageHeight:      630,
+  ogImageAlt:         'Brian Hamburg — Software Engineer, Designer, Musician',
+  twitterCard:        'summary_large_image',
+  twitterTitle:       'burgbits',
+  twitterDescription: 'Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.',
+  twitterImage:       'https://burgbits.com/images/home.png',
 })
 </script>
 
 <template>
-  <NuxtLayout class="min-h-screen flex flex-col justify-between">
+  <NuxtLayout class="flex flex-col justify-between">
     <AppHeader />
-    <main>
-      <NuxtPage />
-    </main>
+    <NuxtPage />
     <AppFooter class="mt-auto" />
   </NuxtLayout>
 </template>
