@@ -55,7 +55,7 @@ export default defineCachedEventHandler(
         {
           items: allItems.filter((item) => !item.dateFinished),
           title: 'Currently Reading',
-          viewAll: 'https://www.goodreads.com/review/list/4284038-brian-hamburg?order=d&shelf=currently-reading',
+          viewAll: 'SHEET_URL',
         },
         {
           items: allItems.filter((item) => !!item.dateFinished).sort((a, b) => {
@@ -65,7 +65,7 @@ export default defineCachedEventHandler(
             return dateB.getTime() - dateA.getTime();
           }),
           title: 'Recently Read',
-          viewAll: 'https://www.goodreads.com/review/list/4284038-brian-hamburg?order=d&shelf=read&sort=date_read',
+          viewAll: 'SHEET_URL',
         },
       ],
     };

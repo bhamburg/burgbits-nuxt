@@ -18,9 +18,12 @@
           {{ name }}
         </p>
         <p class="text-base text-zinc-500 font-normal mb-6 dark:text-zinc-400">
-          {{ title }}&nbsp;&nbsp;·&nbsp;&nbsp;{{ company }}
+          {{ title }}
+          <span class="hidden sm:inline">&nbsp;&nbsp;·&nbsp;&nbsp;</span>
+          <br class="sm:hidden" />
+          {{ company }}
         </p>
-        <div class="flex flex-wrap items-center md:items-start gap-2">
+        <div class="flex flex-wrap justify-center gap-2">
           <span
             v-for="tag in tags"
             :key="tag"

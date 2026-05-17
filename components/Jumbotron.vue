@@ -58,15 +58,13 @@ onMounted(() => {
     object-bottom
     dark:object-[center_20%]
     scale-150
-    dark:scale-125
     transition-all
     duration-700;
   }
   .jumbotron__overlay {
     @apply
     absolute
-    opacity-90
-    dark:opacity-70
+    opacity-80
     h-full
     w-full
     bg-gradient-to-r 
