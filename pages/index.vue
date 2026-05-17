@@ -27,7 +27,7 @@
         <div class="card">
           <h3>Software Engineer</h3>
           <p>
-            With over a decade of experience building user interfaces for 
+            With over two decades of experience building user interfaces for 
             the Web and providing technical support, my focus has always been 
             to remove friction from the user experience.
           </p>

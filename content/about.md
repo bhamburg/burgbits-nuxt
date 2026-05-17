@@ -7,6 +7,12 @@ I’m a software engineer, designer, and musician. Most of my days are spent wor
 
 Ultimately I'm just trying to balance being a father, husband, son, web professional, musician, nerd, colleague, friend, and decent human being in the crazy world we currently live in.
 
+> Father of Twins  
+  Strummer of Strings  
+  Wrangler of the Web  
+  Implementer of Interfaces  
+  Purveyor of Pixels&nbsp;
+
 ## Résumé
 
 With over two decades of experience building user interfaces for the Web and providing technical support, my focus has always been to remove friction from the user experience with an appreciation for both accessibility and aesthetics.
@@ -24,12 +30,6 @@ When I'm not behind my laptop, you can often find me behind my four-string, plec
 </div>
 
 I've been a member of the world-renowned [Fralinger String Band](https://www.fralinger.org){:target="_blank"} for over 25 years, a perennial favorite in the New Year's Day [Mummers Parade](https://www.fralinger.org/mummers-history){:target="_blank"}. Fralinger has traveled literally around the world with performances that have taken us to Mardi Gras in New Orleans, and as far as Hong Kong for the Chinese New Year celebration. I've also been fortunate to have played with some great traditional jazz musicians as part of hot jazz and Dixieland ensembles in the Philadelphia area.
-
-> Father of Twins  
-  Strummer of Strings  
-  Wrangler of the Web  
-  Implementer of Interfaces  
-  Purveyor of Pixels&nbsp;
 
 ## Other Hobbies
 
