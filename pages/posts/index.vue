@@ -20,7 +20,7 @@ const { data: posts } = await useAsyncData('posts', () =>
     </div>
   </Jumbotron>
   <Section>
-    <div class="mt-8">
+    <div class="mt-8 px-2">
       <ul v-if="posts && posts.length" class="space-y-8 list-none ml-0">
         <li
           v-for="post in posts.filter((p) => { 
@@ -31,17 +31,14 @@ const { data: posts } = await useAsyncData('posts', () =>
         >
           <NuxtLink
             :to="post._path"
-            class="no-underline text-inherit hover:text-inherit flex flex-col sm:flex-row sm:items-start gap-5"
+            class="no-underline text-inherit hover:text-inherit flex flex-col sm:flex-row-reverse sm:items-start gap-5"
           >
             <img
               v-if="post.featuredImage"
               :src="post._path + '/' + post.featuredImage"
               :alt="post.title"
-              width="160"
-              height="110"
-              class="w-full sm:w-40 sm:flex-shrink-0 h-44 sm:h-28 object-cover rounded-lg shadow"
+              class="w-full sm:w-44 sm:flex-shrink-0 h-44 sm:h-[130px] object-cover rounded-lg shadow"
             />
-  
             <article class="flex-1 min-w-0">
               <time
                 v-if="post.date"

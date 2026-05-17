@@ -1,19 +1,22 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { onClickOutside } from '@vueuse/core'
 
-const isOpen = ref(false);
+const isOpen = ref(false)
+const nav    = ref(null)
+
+onClickOutside(nav, () => isOpen.value = false)
 </script>
 
 <template>
-  <nav class="w-full fixed top-0 z-10 bg-white dark:bg-zinc-800 shadow-xl transition bg-opacity-70 dark:bg-opacity-70 backdrop-blur-xl">
+  <nav ref="nav" class="w-full fixed top-0 z-50 bg-white dark:bg-zinc-800 shadow-xl transition bg-opacity-70 dark:bg-opacity-70 backdrop-blur-xl">
     <div class="flex flex-wrap font-mono items-center justify-between mx-auto p-4">
       <a href="/" id="brand" class="flex items-center space-x-3 rtl:space-x-reverse dark:text-white !bg-transparent border-none">
-        <svg version="1.1" alt="burgbits Logo" class="h-[35px] fill-black dark:fill-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 155 155" xml:space="preserve">
+        <svg version="1.1" alt="burgbits Logo" class="h-8 fill-black dark:fill-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 155 155" xml:space="preserve">
           <polygon points="120,65 120,75 110,75 110,65 100,65 100,55 100,45 100,35 90,35 90,45 80,45 80,35 70,35 70,45 60,45 
             60,35 50,35 50,45 50,55 50,65 40,65 40,75 30,75 30,65 20,65 20,75 20,85 20,95 20,105 20,115 30,115 40,115 50,115 60,115 60,105 
             60,95 70,95 70,85 80,85 80,95 90,95 90,105 90,115 100,115 110,115 120,115 130,115 130,105 130,95 130,85 130,75 130,65 "/>
         </svg>
-        <span class="self-center text-2xl whitespace-nowrap">bhamburg.com</span>
+        <span class="self-center text-xl whitespace-nowrap">burgbits</span>
       </a>
       <div class="flex md:hidden ml-auto justify-items-center">
         <DarkMode />

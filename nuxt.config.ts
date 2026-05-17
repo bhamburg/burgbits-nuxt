@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       },
       viewport: 'width=device-width, initial-scale=1',
       meta: [
-        { name: 'description', content: 'My personal blog and corner of the web — built to write about things I find interesting and share what I\'m learning.' }
+        { name: 'description', content: 'Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.' }
       ],
       bodyAttrs: {
         class: 'dark:text-white dark:bg-zinc-800 transition',

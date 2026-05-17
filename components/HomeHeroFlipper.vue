@@ -1,3 +1,30 @@
+<script setup>
+const imageModules = import.meta.glob('/public/images/flipper/*', { eager: true })
+const photos = Object.keys(imageModules).map(k => k.replace('/public', ''))
+
+const heroLoaded = ref(false)
+const flipped = ref(false)
+const flipping = ref(false)
+const photoIndex = ref(Math.floor(Math.random() * photos.length))
+
+onMounted(() => {
+  photos.forEach(src => { new Image().src = src })
+  setInterval(flip, 10000)
+})
+
+function flip() {
+  if (flipping.value) return
+  flipping.value = true
+  flipped.value = !flipped.value
+  if (!flipped.value) {
+    setTimeout(() => {
+      photoIndex.value = Math.floor(Math.random() * photos.length)
+    }, 800)
+  }
+  setTimeout(() => { flipping.value = false }, 1000)
+}
+</script>
+
 <template>
   <div
     @click="flip"
@@ -28,33 +55,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-const imageModules = import.meta.glob('/public/images/flipper/*', { eager: true })
-const photos = Object.keys(imageModules).map(k => k.replace('/public', ''))
-
-const heroLoaded = ref(false)
-const flipped = ref(false)
-const flipping = ref(false)
-const photoIndex = ref(Math.floor(Math.random() * photos.length))
-
-onMounted(() => {
-  photos.forEach(src => { new Image().src = src })
-  setInterval(flip, 10000)
-})
-
-function flip() {
-  if (flipping.value) return
-  flipping.value = true
-  flipped.value = !flipped.value
-  if (!flipped.value) {
-    setTimeout(() => {
-      photoIndex.value = Math.floor(Math.random() * photos.length)
-    }, 800)
-  }
-  setTimeout(() => { flipping.value = false }, 1000)
-}
-</script>
 
 <style>
   /* flip card styles */
