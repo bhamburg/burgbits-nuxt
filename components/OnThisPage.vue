@@ -87,10 +87,10 @@ onUnmounted(() => observer?.disconnect())
 }
 
 .toc__link--active {
-  @apply font-medium
-         text-sky-600 dark:text-indigo-300
-         bg-zinc-100 dark:bg-zinc-800
-         border-l-sky-600 dark:border-l-indigo-300;
+  @apply lg:font-medium
+    lg:text-sky-600 dark:lg:text-indigo-300
+    lg:bg-zinc-100 dark:lg:bg-zinc-800
+    lg:border-l-sky-600 dark:lg:border-l-indigo-300;
 }
 
 .toc__back {
