@@ -4,7 +4,7 @@
 
 My personal blog and corner of the web — built to write about things I find interesting and share what I'm learning.
 
-👉 **[burgbits](https://burgbits.com)**
+👉 **[burgbits.com](https://burgbits.com)**
 
 ## About
 
