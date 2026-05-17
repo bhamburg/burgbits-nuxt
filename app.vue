@@ -9,7 +9,7 @@ useHead({
 })
 
 useSeoMeta({
-  description:        'Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.',
+  description:        'burgbits is Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.',
   ogSiteName:         'burgbits',
   ogType:             'website',
   ogUrl:              'https://burgbits.com',
@@ -19,7 +19,7 @@ useSeoMeta({
   ogImageAlt:         'Brian Hamburg — Software Engineer, Designer, Musician',
   twitterCard:        'summary_large_image',
   twitterTitle:       'burgbits',
-  twitterDescription: 'Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.',
+  twitterDescription: 'burgbits is Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.',
   twitterImage:       'https://burgbits.com/images/home.png',
 })
 </script>
