@@ -56,7 +56,7 @@ onMounted(() => {
     h-full 
     object-cover
     object-bottom
-    dark:object-[center_20%]
+    dark:object-[center_21%]
     scale-150
     transition-all
     duration-700;
