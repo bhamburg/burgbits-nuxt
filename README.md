@@ -1,6 +1,6 @@
 # burgbits
 
-![homepage banner](public/images/home.png)
+![homepage banner](public/images/home.jpg)
 
 My personal blog and corner of the web — built to write about things I find interesting and share what I'm learning.
 

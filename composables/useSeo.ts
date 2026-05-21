@@ -8,7 +8,7 @@ interface SeoOptions {
 
 export const useSeo = ({ title, description, image, type = 'website', publishedAt }: SeoOptions) => {
   const url   = `https://burgbits.com${useRoute().path}`
-  const img   = image ?? 'https://burgbits.com/images/home.png'
+  const img   = image ?? 'https://burgbits.com/images/home.jpg'
   const full  = `${title} - Brian Hamburg`
 
   useSeoMeta({
