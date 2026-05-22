@@ -59,7 +59,7 @@ onUnmounted(() => observer?.disconnect())
     <div v-if="props.isPost" class="mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-800">
       <a href="/posts" class="toc__back">
         <i class="ti ti-arrow-left text-sm" aria-hidden="true" />
-        Back to the blog
+        ← Back to the blog
       </a>
     </div>
   </nav>

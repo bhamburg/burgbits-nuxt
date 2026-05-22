@@ -1,6 +1,10 @@
 ---
 updated: 2026-05-13
 ---
+A catalog of the hardware and software I rely on day-to-day, 
+from my custom-built PC and retro gaming setup to the dev tools and creative apps I use to build and make things.
+Inspired by the [/uses](https://uses.tech/){:target="_blank"} community tradition of developers sharing their setups.
+
 ## Hardware
 ### Computers
 - [Custom-built PC](https://pcpartpicker.com/b/Hq9G3C){:target="_blank"}
@@ -54,6 +58,3 @@ updated: 2026-05-13
 - [Figma](https://www.figma.com){:target="_blank"}
 - [GarageBand](https://www.apple.com/mac/garageband/){:target="_blank"}
 - [MuseScore](https://musescore.org/){:target="_blank"}
-
-
-[What is a /uses page? →](https://uses.tech/){:target="_blank"}

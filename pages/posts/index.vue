@@ -34,8 +34,8 @@ const { data: posts } = await useAsyncData('posts', () =>
             class="no-underline text-inherit hover:text-inherit flex flex-col sm:flex-row-reverse sm:items-start gap-5"
           >
             <img
-              v-if="post.featuredImage"
-              :src="post._path + '/' + post.featuredImage"
+              v-if="post.thumbnail ?? post.featuredImage"
+              :src="post._path + '/' + (post.thumbnail ?? post.featuredImage)"
               :alt="post.title"
               class="w-full sm:w-44 sm:flex-shrink-0 h-44 sm:h-[130px] object-cover rounded-lg shadow"
             />

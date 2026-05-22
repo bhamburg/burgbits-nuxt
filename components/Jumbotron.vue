@@ -47,7 +47,7 @@ onMounted(() => {
   .jumbotron h2 {
     @apply font-black text-4xl md:text-5xl m-0;
   }
-  .jumbotron__bg {
+.jumbotron__bg {
     @apply 
     absolute 
     top-0 
@@ -56,8 +56,11 @@ onMounted(() => {
     h-full 
     object-cover
     object-bottom
+    origin-bottom
     dark:object-[center_21%]
-    scale-150
+    dark:origin-[center_21%]
+    scale-[250%]
+    md:scale-150
     transition-all
     duration-700;
   }

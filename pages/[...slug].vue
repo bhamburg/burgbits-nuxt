@@ -44,7 +44,8 @@ useSeo({
       <div class="flex flex-col lg:flex-row-reverse">
         <OnThisPage :links="doc?.body?.toc?.links" :isPost="doc?._path?.startsWith('/posts')" />
         <article class="lg:w-[75%] lg:mr-auto mt-4">
-          <img v-if="doc.featuredImage" class="lg:mt-10 mb-4" :src="doc._path + '/' + doc.featuredImage" :alt="doc.title" />
+          <img v-if="doc.featuredImage" class="lg:mt-10" :src="doc._path + '/' + doc.featuredImage" :alt="doc.title" />
+          <em v-if="doc.caption">{{ doc.caption }}</em>
           <ContentRenderer :value="doc" />
         </article>
       </div>

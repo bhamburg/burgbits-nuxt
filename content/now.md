@@ -1,6 +1,9 @@
 ---
 updated: 2026-05-10
---- 
+---
+A snapshot of what's going on in my life right now: family, work, and the things I do for fun.
+Inspired by the [/now](https://nownownow.com/){:target="_blank"} movement, it's the answer to the question "so what are you up to these days?"
+
 ![dog and banjo](/images/fralinger-2026-banjos.jpg)
 *Fralinger String Band banjo section at the String Band Spectactular*
 
