@@ -15,14 +15,19 @@ const { status, data } = useFetch<any>(props.dataPath!, { server: false, lazy: t
 
 // ── View toggle ───────────────────────────────────────────────────────────────
 
-const isTable = ref(props.alwaysTable || props.table)
+const tableStates = ref<Record<string, boolean>>({})
 
-watchEffect(() => {
-  if (props.alwaysTable || props.table) isTable.value = true
-})
+const isTable = (shelf: any) => {
+  if (props.alwaysTable || props.table) return true
+  if (props.alwaysGrid) return false
+  // Default to whatever the prop says; lazy-init on first access
+  return tableStates.value[shelf.title] ?? (props.table ?? false)
+}
 
-const toggleTable = () => {
-  if (!props.alwaysGrid && !props.alwaysTable) isTable.value = !isTable.value
+const toggleTable = (shelf: any) => {
+  if (!props.alwaysGrid && !props.alwaysTable) {
+    tableStates.value[shelf.title] = !isTable(shelf)
+  }
 }
 
 // ── Shelf type helpers ────────────────────────────────────────────────────────
@@ -30,11 +35,13 @@ const toggleTable = () => {
 const shelfIs = (shelf: any, ...keywords: string[]) =>
   keywords.some(kw => shelf.title.toLowerCase().includes(kw))
 
-const isCurrent  = (s: any) => shelfIs(s, 'current')
-const isGaming   = (s: any) => shelfIs(s, 'play', 'finished')
-const isReading  = (s: any) => shelfIs(s, 'read')
+const isCurrent  = (s: any) => shelfIs(s, 'current');
 const isFinished = (s: any) => shelfIs(s, 'finished')
-const showRating = (s: any) => !shelfIs(s, 'current', 'run')
+const isGaming   = (s: any) => shelfIs(s, 'play', 'finished');
+const isParades  = (s: any) => shelfIs(s, 'theme');
+const isReading  = (s: any) => shelfIs(s, 'read');
+const isVideo    = (s: any) => shelfIs(s, 'watch');
+const showRating = (s: any) => shelfIs(s, 'finished', 'read', 'watch') && !isCurrent(s);
 
 // ── Sorting ───────────────────────────────────────────────────────────────────
 
@@ -47,14 +54,25 @@ const sortByColumn = (column: string) => {
 }
 
 const comparators: Record<string, (a: any, b: any) => number> = {
-  dateFinished: (a, b) => new Date(a.dateFinished).getTime() - new Date(b.dateFinished).getTime(),
   title:        (a, b) => a.title.localeCompare(b.title),
   author:       (a, b) => (a.author   ?? '').localeCompare(b.author   ?? ''),
-  platform:     (a, b) => (a.platform ?? '').localeCompare(b.platform ?? ''),
+  dateFinished: (a, b) => new Date(a.dateFinished).getTime() - new Date(b.dateFinished).getTime(),
   rating:       (a, b) => a.rating - b.rating,
+  platform:     (a, b) => (a.platform ?? '').localeCompare(b.platform ?? ''),
+  band:         (a, b) => (a.band     ?? '').localeCompare(b.band     ?? ''),
+  prize:        (a, b) => a.prize - b.prize,
+  suit:         (a, b) => (a.suit     ?? '').localeCompare(b.suit     ?? ''),
+  time:         (a, b) => {
+    const toSeconds = (t: string) => t.split(':').reduce((acc, part) => acc * 60 + +part, 0)
+    return toSeconds(a.time ?? '0') - toSeconds(b.time ?? '0')
+  },
+  pace:         (a, b) => {
+    const toSeconds = (t: string) => t.split(':').reduce((acc, part) => acc * 60 + +part, 0)
+    return toSeconds(a.pace ?? '0') - toSeconds(b.pace ?? '0')
+  },
 }
 
-const TABLE_MAX = 17
+const TABLE_MAX = 50
 const GRID_MAX  = 23
 
 const sortedItems = (shelf: any) => {
@@ -63,13 +81,13 @@ const sortedItems = (shelf: any) => {
   return sortDirection.value === 'desc' ? items.reverse() : items
 }
 
-const itemTitle = (item: any) => [
+const filteredItems = (item: any) => [
   item.title,
-  item.author              && item.author,
-  item.platform            && item.platform,
+  item.author,
+  item.dateFinished        && `Finished ${item.dateFinished}`,
+  item.platform,
   item.firstTime === 'yes' && 'First Playthrough',
   item.completed === 'yes' && '100% Completion',
-  item.dateFinished        && `Finished ${item.dateFinished}`,
   item.rating              && `${item.rating}/5 stars`,
 ].filter(Boolean).join(' · ')
 </script>
@@ -100,22 +118,22 @@ const itemTitle = (item: any) => [
 
         <button
           v-if="!props.alwaysTable && !props.alwaysGrid"
-          :aria-pressed="isTable"
-          class="flex items-center gap-1 p-1 rounded-full bg-zinc-100 dark:bg-zinc-800
-                 border border-zinc-200 dark:border-zinc-700"
-          @click="toggleTable"
+          :aria-pressed="isTable(shelf)"
+          class="flex items-center gap-1 p-1 mt-3 rounded-full bg-zinc-100 dark:bg-zinc-800
+                border border-zinc-200 dark:border-zinc-700"
+          @click="toggleTable(shelf)"
         >
-          <span class="toggle-option" :class="{ 'toggle-option--active': !isTable }">Covers</span>
-          <span class="toggle-option" :class="{ 'toggle-option--active':  isTable }">Table</span>
+          <span class="toggle-option" :class="{ 'toggle-option--active': !isTable(shelf) }">Covers</span>
+          <span class="toggle-option" :class="{ 'toggle-option--active': isTable(shelf) }">Table</span>
         </button>
       </div>
 
       <!-- Grid view -->
-      <div v-show="!isTable" class="flex flex-row flex-wrap items-end justify-center md:justify-start">
+      <div v-show="!isTable(shelf) && shelf.items[0].coverSrc" class="flex flex-row flex-wrap items-end justify-center md:justify-start">
         <NuxtLink
           v-for="item in shelf.items.slice(0, GRID_MAX)"
           :key="`${item.title}-${item.dateFinished}`"
-          :title="itemTitle(item)"
+          :title="filteredItems(item)"
           :to="item.url"
           class="mx-3 mb-6 relative no-underline overflow-hidden
                  drop-shadow-md hover:drop-shadow-lg hover:scale-105 transition-transform"
@@ -131,6 +149,7 @@ const itemTitle = (item: any) => [
           </div>
 
           <img
+            v-if="item.coverSrc"
             :alt="item.title"
             :src="item.coverSrc"
             class="w-[94px] rounded-none border-none shadow transition-opacity" 
@@ -163,7 +182,7 @@ const itemTitle = (item: any) => [
 
         <!-- View all -->
         <NuxtLink
-          v-if="shelf.items.length > TABLE_MAX"
+          v-if="shelf.items.length > GRID_MAX"
           :to="shelf.viewAll"
           target="_blank"
           class="flex items-center justify-center text-center font-bold capitalize
@@ -176,17 +195,92 @@ const itemTitle = (item: any) => [
       </div>
 
       <!-- Table view -->
-      <div v-show="isTable" class="overflow-x-auto">
+      <div v-show="isTable(shelf)" class="mb-4 overflow-x-auto">
         <table class="w-full min-w-[540px] text-sm">
           <thead>
             <tr class="text-left border-b border-zinc-200 dark:border-zinc-800">
-              <ShelfSortTh v-if="!isCurrent(shelf)" column="dateFinished" class="w-32" :active="sortColumn" :direction="sortDirection" @sort="sortByColumn">Date</ShelfSortTh>
-              <ShelfSortTh column="title" :active="sortColumn" :direction="sortDirection" @sort="sortByColumn">Title</ShelfSortTh>
-              <ShelfSortTh v-if="isGaming(shelf)" column="platform" :active="sortColumn" :direction="sortDirection" @sort="sortByColumn">Platform</ShelfSortTh>
-              <ShelfSortTh v-if="isReading(shelf)" column="author" :active="sortColumn" :direction="sortDirection" @sort="sortByColumn">Author</ShelfSortTh>
+              <ShelfSortTh v-if="!isCurrent(shelf)"
+                column="dateFinished"
+                class="text-right w-32"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Date
+              </ShelfSortTh>
+              <ShelfSortTh v-if="isFinished(shelf) || isGaming(shelf) || isReading(shelf) || isVideo(shelf) || isParades(shelf)"
+                column="title"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Title
+              </ShelfSortTh>
+              <ShelfSortTh v-if="isGaming(shelf)"
+                column="platform"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Platform
+              </ShelfSortTh>
+              <ShelfSortTh v-if="isReading(shelf)"
+                column="author"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Author
+              </ShelfSortTh>
+              <!-- Gaming -->
               <th v-if="isFinished(shelf)" class="p-2">New</th>
               <th v-if="isFinished(shelf)" class="p-2">100%</th>
-              <ShelfSortTh v-if="showRating(shelf)" column="rating" class="w-24 text-center" :active="sortColumn" :direction="sortDirection" @sort="sortByColumn">Rating</ShelfSortTh>
+              <ShelfSortTh v-if="showRating(shelf)"
+                column="rating"
+                class="w-24 text-center"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Rating
+              </ShelfSortTh>
+              <!-- Parades -->
+              <ShelfSortTh v-if="isParades(shelf)"
+                class="p-2 text-center"
+                column="band"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Band
+              </ShelfSortTh>
+              <ShelfSortTh v-if="isParades(shelf)"
+                class="p-2 text-center"
+                column="prize"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Prize
+              </ShelfSortTh>
+              <ShelfSortTh v-if="isParades(shelf)" 
+                class="p-2 text-center" column="suit"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Suit
+              </ShelfSortTh>
+              <!-- Concerts
+              <th v-if="shelfIs(shelf, 'concert')" class="p-2 text-center">Artist</th>
+              <th v-if="shelfIs(shelf, 'concert')" class="p-2 text-center">Venue</th>
+              <th v-if="shelfIs(shelf, 'concert')" class="p-2 text-center">City</th>
+              -->
+              <!-- Runs -->
+              <th v-if="shelfIs(shelf, 'run')" class="p-2 text-center">Name</th>
+              <th v-if="shelfIs(shelf, 'run')" class="p-2 text-center">Time</th>
+              <th v-if="shelfIs(shelf, 'run')" class="p-2 text-center">Pace</th>
+              <th v-if="shelfIs(shelf, 'run')" class="p-2 text-center">Miles</th>
             </tr>
           </thead>
           <tbody>
@@ -209,6 +303,17 @@ const itemTitle = (item: any) => [
               <td v-if="showRating(shelf)" class="p-2 text-center text-lg">
                 <span v-for="star in item.rating" :key="star">★</span>
               </td>
+              <!-- Parades -->
+              <td v-if="item.band" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.band }}</td>
+              <td v-if="item.prize" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.prize }}</td>
+              <td v-if="item.suit" class="p-2 text-center text-xl text-emerald-500">
+                <span v-if="item.suit.toLowerCase() === 'yes'" title="paraded in costume" class="cursor-help">✔</span>
+              </td>
+              <!-- Runs -->
+              <td v-if="item.name" class="p-2 text-zinc-500 dark:text-zinc-400">{{ item.name }}</td>
+              <td v-if="item.time" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.time }}</td>
+              <td v-if="item.pace" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.pace }}</td>
+              <td v-if="item.miles" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.miles }}</td>
             </tr>
           </tbody>
         </table>

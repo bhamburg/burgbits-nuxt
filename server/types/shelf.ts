@@ -1,8 +1,8 @@
 /** Single entry on any shelf — fields are optional per shelf type */
 export interface ShelfItem {
-  title: string;
-  url: string;
-  coverSrc: string;
+  title?: string;
+  url?: string;
+  coverSrc?: string;
   dateFinished?: string;
   rating?: number;         // 1–5 stars
   releaseYear?: string;
@@ -12,6 +12,15 @@ export interface ShelfItem {
   completed?: string;     // 'true' = 100% completion
   // Books only
   author?: string;
+  // Parades and Concerts
+  band?: string;
+  prize?: string;
+  suit?: string;
+  // Runs
+  name?: string;
+  time?: string;
+  pace?: string;
+  miles?: string;
 }
 
 export interface Shelf {

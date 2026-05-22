@@ -48,7 +48,7 @@ function makeShelves(items: ShelfItem[]): Shelf[] {
     shelves.push({
       items: items.filter((item) => !item.dateFinished),
       title: 'Currently Playing',
-      viewAll: 'SHEET_URL',
+      viewAll: SHEET_URL,
     });
   }
   if (items.filter((item) => !!item.dateFinished).length > 0) {
@@ -60,7 +60,7 @@ function makeShelves(items: ShelfItem[]): Shelf[] {
         return new Date(b.dateFinished).getTime() - new Date(a.dateFinished).getTime();
       }),
       title: 'Recently Finished',
-      viewAll: 'SHEET_URL',
+      viewAll: SHEET_URL,
     });
   }
   return shelves;
