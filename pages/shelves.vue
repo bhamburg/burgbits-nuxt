@@ -24,7 +24,11 @@ useHead({
         <p>
           I like keeping track of what I've done, both as a data project and a personal record.
           Here you'll find logs of what I've been reading, watching, and playing,
+<<<<<<< HEAD
           along with Mummers performances I've been a part of and races I've run.
+=======
+          along with Mummers Parades I've been a part of and races I've run.
+>>>>>>> 85329c5 (shelf and jumbotron tweaks)
         </p>   
         <h2 id="books">Books</h2>
         <blockquote>
