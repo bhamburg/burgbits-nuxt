@@ -40,7 +40,6 @@ const isFinished = (s: any) => shelfIs(s, 'finished')
 const isGaming   = (s: any) => shelfIs(s, 'play', 'finished');
 const isParades  = (s: any) => shelfIs(s, 'theme');
 const isReading  = (s: any) => shelfIs(s, 'read');
-const isVideo    = (s: any) => shelfIs(s, 'watch');
 const showRating = (s: any) => shelfIs(s, 'finished', 'read', 'watch') && !isCurrent(s);
 
 // ── Sorting ───────────────────────────────────────────────────────────────────
@@ -277,7 +276,7 @@ const filteredItems = (item: any) => [
               <th v-if="shelfIs(shelf, 'concert')" class="p-2 text-center">City</th>
               -->
               <!-- Runs -->
-              <ShelfSortTh v-if="shelfIs(shelf, 'races')"
+              <ShelfSortTh v-if="shelfIs(shelf, 'race')"
                 class="p-2 text-right"
                 column="time"
                 :active="sortColumn"
@@ -286,7 +285,7 @@ const filteredItems = (item: any) => [
               >
                 Time
               </ShelfSortTh>
-              <ShelfSortTh v-if="shelfIs(shelf, 'races')"
+              <ShelfSortTh v-if="shelfIs(shelf, 'race')"
                 class="p-2 text-right"
                 column="pace"
                 :active="sortColumn"
@@ -295,7 +294,7 @@ const filteredItems = (item: any) => [
               >
                 Pace
               </ShelfSortTh>
-              <ShelfSortTh v-if="shelfIs(shelf, 'races')"
+              <ShelfSortTh v-if="shelfIs(shelf, 'race')"
                 class="p-2 text-right"
                 column="miles"
                 :active="sortColumn"
