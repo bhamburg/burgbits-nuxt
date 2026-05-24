@@ -1,12 +1,6 @@
 <template>
   <article class="card-trio">
-    <!-- Default Slot for the regular text -->
     <slot name="default" />
-
-    <!-- Clean named slot handling without collisions -->
-    <div class="unwrapped-content">
-      <slot name="unwrap" mdc-unwrap="p" />
-    </div>
   </article>
 </template>
 

@@ -53,23 +53,20 @@ const sortByColumn = (column: string) => {
   sortColumn.value = column
 }
 
+const toSeconds = (t: string) => t.split(':').reduce((acc, part) => acc * 60 + +part, 0)
+
 const comparators: Record<string, (a: any, b: any) => number> = {
-  title:        (a, b) => a.title.localeCompare(b.title),
   author:       (a, b) => (a.author   ?? '').localeCompare(b.author   ?? ''),
-  dateFinished: (a, b) => new Date(a.dateFinished).getTime() - new Date(b.dateFinished).getTime(),
-  rating:       (a, b) => a.rating - b.rating,
-  platform:     (a, b) => (a.platform ?? '').localeCompare(b.platform ?? ''),
   band:         (a, b) => (a.band     ?? '').localeCompare(b.band     ?? ''),
+  dateFinished: (a, b) => new Date(a.dateFinished).getTime() - new Date(b.dateFinished).getTime(),
+  miles:        (a, b) => parseFloat(a.miles ?? '0') - parseFloat(b.miles ?? '0'),
+  pace:         (a, b) => toSeconds(a.pace  ?? '0') - toSeconds(b.pace  ?? '0'),
+  platform:     (a, b) => (a.platform ?? '').localeCompare(b.platform ?? ''),
   prize:        (a, b) => a.prize - b.prize,
+  rating:       (a, b) => a.rating - b.rating,
   suit:         (a, b) => (a.suit     ?? '').localeCompare(b.suit     ?? ''),
-  time:         (a, b) => {
-    const toSeconds = (t: string) => t.split(':').reduce((acc, part) => acc * 60 + +part, 0)
-    return toSeconds(a.time ?? '0') - toSeconds(b.time ?? '0')
-  },
-  pace:         (a, b) => {
-    const toSeconds = (t: string) => t.split(':').reduce((acc, part) => acc * 60 + +part, 0)
-    return toSeconds(a.pace ?? '0') - toSeconds(b.pace ?? '0')
-  },
+  time:         (a, b) => toSeconds(a.time  ?? '0') - toSeconds(b.time  ?? '0'),
+  title:        (a, b) => a.title.localeCompare(b.title),
 }
 
 const TABLE_MAX = 50
@@ -208,13 +205,13 @@ const filteredItems = (item: any) => [
               >
                 Date
               </ShelfSortTh>
-              <ShelfSortTh v-if="isFinished(shelf) || isGaming(shelf) || isReading(shelf) || isVideo(shelf) || isParades(shelf)"
-                column="title"
+              <ShelfSortTh
+                :column="shelf.items[0].name ? 'name' : 'title'"
                 :active="sortColumn"
                 :direction="sortDirection"
                 @sort="sortByColumn"
               >
-                Title
+                {{ shelf.items[0].name ? 'Name' : 'Title' }}
               </ShelfSortTh>
               <ShelfSortTh v-if="isGaming(shelf)"
                 column="platform"
@@ -264,7 +261,8 @@ const filteredItems = (item: any) => [
                 Prize
               </ShelfSortTh>
               <ShelfSortTh v-if="isParades(shelf)" 
-                class="p-2 text-center" column="suit"
+                class="p-2 text-center"
+                column="suit"
                 :active="sortColumn"
                 :direction="sortDirection"
                 @sort="sortByColumn"
@@ -277,10 +275,33 @@ const filteredItems = (item: any) => [
               <th v-if="shelfIs(shelf, 'concert')" class="p-2 text-center">City</th>
               -->
               <!-- Runs -->
-              <th v-if="shelfIs(shelf, 'run')" class="p-2 text-center">Name</th>
-              <th v-if="shelfIs(shelf, 'run')" class="p-2 text-center">Time</th>
-              <th v-if="shelfIs(shelf, 'run')" class="p-2 text-center">Pace</th>
-              <th v-if="shelfIs(shelf, 'run')" class="p-2 text-center">Miles</th>
+              <ShelfSortTh v-if="shelfIs(shelf, 'races')"
+                class="p-2 text-right"
+                column="time"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Time
+              </ShelfSortTh>
+              <ShelfSortTh v-if="shelfIs(shelf, 'races')"
+                class="p-2 text-right"
+                column="pace"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Pace
+              </ShelfSortTh>
+              <ShelfSortTh v-if="shelfIs(shelf, 'races')"
+                class="p-2 text-right"
+                column="miles"
+                :active="sortColumn"
+                :direction="sortDirection"
+                @sort="sortByColumn"
+              >
+                Miles
+              </ShelfSortTh>
             </tr>
           </thead>
           <tbody>
@@ -291,7 +312,10 @@ const filteredItems = (item: any) => [
                      hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors"
             >
               <td v-if="!isCurrent(shelf) && item.dateFinished" class="p-2 w-32 text-right text-zinc-400 dark:text-zinc-500">{{ item.dateFinished }}</td>
-              <td v-if="item.title"    class="p-2"><NuxtLink :to="item.url" target="_blank">{{ item.title }}</NuxtLink></td>
+              <td v-if="item.title" class="p-2">
+                <NuxtLink v-if="item.url" :to="item.url" target="_blank">{{ item.title }}</NuxtLink>
+                <span v-else>{{ item.title }}</span>
+              </td>
               <td v-if="item.platform" class="p-2 text-zinc-500 dark:text-zinc-400">{{ item.platform }}</td>
               <td v-if="item.author"   class="p-2 text-zinc-500 dark:text-zinc-400">{{ item.author }}</td>
               <td v-if="isFinished(shelf)" class="p-2 text-center text-xl text-emerald-500">
@@ -310,10 +334,9 @@ const filteredItems = (item: any) => [
                 <span v-if="item.suit.toLowerCase() === 'yes'" title="paraded in costume" class="cursor-help">✔</span>
               </td>
               <!-- Runs -->
-              <td v-if="item.name" class="p-2 text-zinc-500 dark:text-zinc-400">{{ item.name }}</td>
-              <td v-if="item.time" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.time }}</td>
-              <td v-if="item.pace" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.pace }}</td>
-              <td v-if="item.miles" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.miles }}</td>
+              <td v-if="item.time" class="p-2 text-right text-zinc-500 dark:text-zinc-400">{{ item.time }}</td>
+              <td v-if="item.pace" class="p-2 text-right text-zinc-500 dark:text-zinc-400">{{ item.pace }}</td>
+              <td v-if="item.miles" class="p-2 text-right text-zinc-500 dark:text-zinc-400">{{ item.miles }}</td>
             </tr>
           </tbody>
         </table>

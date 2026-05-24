@@ -79,7 +79,7 @@ onUnmounted(() => observer?.disconnect())
 }
 
 .toc__link:hover {
-  @apply text-zinc-900 dark:text-zinc-100 bg-zinc-100 dark:bg-zinc-800;
+  @apply lg:text-zinc-900 lg:dark:text-zinc-100 lg:bg-zinc-100 lg:dark:bg-zinc-800;
 }
 
 .toc__link--h3 {

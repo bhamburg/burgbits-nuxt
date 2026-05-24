@@ -57,10 +57,10 @@ onMounted(() => {
     object-cover
     object-bottom
     origin-bottom
-    dark:object-[center_21%]
-    dark:origin-[center_21%]
-    scale-[250%]
-    md:scale-150
+    dark:object-[center_22%]
+    dark:origin-[center_22%]
+    scale-[200%]
+    sm:scale-150
     transition-all
     duration-700;
   }

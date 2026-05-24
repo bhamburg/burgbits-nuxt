@@ -1,16 +1,16 @@
 /**
- * GET /api/shelf/parades
+ * GET /api/shelf/runs
  *
- * Reads the Mummers sheet tab and returns a single "Mummers Parades" shelf
+ * Reads the Runs sheet tab and returns a single "Runs" shelf
  * containing all rows with a date, sorted most recent first.
  *
  * ── Expected column headers (case-sensitive) ────────────────────────────────
- *  date            Parade year/date, e.g. "Jan 1, 2025"
- *  band            String band name
- *  prize           Award or placement
- *  suit            Did I wear a suit that year
- *  title           Display name of the performance
- *  url             Link to the performance
+ *  date            Race date, e.g. "Jan 1, 2025"
+ *  name            Race name
+ *  time            Finish time, e.g. "1:44:32"
+ *  pace            Pace per mile, e.g. "10:27"
+ *  miles           Race distance in miles, e.g. "10"
+ *  url             Link to race results
  * ────────────────────────────────────────────────────────────────────────────
  *
  * Response is cached for 1 hour via Nitro's built-in cache layer.
@@ -20,18 +20,18 @@ import { fetchSheetRows } from '../../utils/sheets';
 import type { Shelf, ShelfItem, ShelfResponse } from '../../types/shelf';
 
 const SPREADSHEET_ID = '1IAGxWmD6xg5JIaIGPHFIKARA7AigSYSvG5nqlTz15L0';
-const GID = '932465211';
+const GID = '1655703602';
 const SHEET_URL =
   `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}` +
   `/edit?gid=${GID}#gid=${GID}`;
 
-function rowToMummersItem(row: Record<string, string>): ShelfItem {
+function rowToRaceItem(row: Record<string, string>): ShelfItem {
   return {
-    band: row.band ?? '',
     dateFinished: row.date ?? '',
-    prize: row.prize ?? '',
-    suit: row.suit ?? '',
-    title: row.title ?? '',
+    miles: row.miles ?? '',
+    name: row.name ?? '',
+    pace: row.pace ?? '',
+    time: row.time ?? '',
     url: row.url ?? '',
   };
 }
@@ -41,7 +41,7 @@ export default defineCachedEventHandler(
     const rows = await fetchSheetRows(SPREADSHEET_ID, GID);
 
     const items: ShelfItem[] = rows
-      .map(rowToMummersItem)
+      .map(rowToRaceItem)
       .filter((item) => item.title !== '' && !!item.dateFinished)
       .sort((a, b) => {
         if (!a.dateFinished) return 1;
@@ -51,7 +51,7 @@ export default defineCachedEventHandler(
 
     const shelf: Shelf = {
       items,
-      title: 'String Band Themes',
+      title: 'Officially Sanctioned Races',
       viewAll: SHEET_URL,
     };
 
@@ -64,7 +64,7 @@ export default defineCachedEventHandler(
   },
   {
     maxAge: 60 * 60,
-    name: 'shelf-parades',
-    getKey: () => 'parades',
+    name: 'shelf-races',
+    getKey: () => 'races',
   },
 );

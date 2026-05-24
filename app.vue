@@ -138,7 +138,7 @@ section, footer {
 
   /* Video embeds */
   .video-container {
-    @apply relative mb-6 pb-[56.25%] h-0 overflow-hidden rounded-xl shadow;
+    @apply relative mb-6 pb-[56.25%] h-0 overflow-hidden shadow;
     embed, iframe, object {
       @apply absolute top-0 left-0 w-full h-full;
     }

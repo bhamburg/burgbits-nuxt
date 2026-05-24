@@ -19,6 +19,9 @@ Currently, I'm a senior software engineer for The Walt Disney Company, working o
 
 Banjo, books, and video games are my favorite pastimes outside of coding. You can always see the latest books I've read and games I've played on my [shelves](/shelves) page. On New Years Day, I performed with the Fralinger String Band in the Mummers Parade and the first-of-its-kind [String Band Spectacular](https://www.youtube.com/watch?v=1kKQwbYVVdg){:target="_blank"} competition at Lincoln Financial Field. Our 2026 show, entitled *Making Waves*, was awarded third prize.
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/1NG_c7WAn6g?si=yxn57pseolX5f_x7?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+::youtube-embed
+---
+src: https://www.youtube.com/embed/1NG_c7WAn6g?si=yxn57pseolX5f_x7?rel=0
+title: Fralinger String Band 2026 Judges Stand Performance
+---
+::

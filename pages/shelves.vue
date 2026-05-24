@@ -16,7 +16,7 @@ useHead({
         { text: '🎮 Games', id: 'games' },
         { text: '📺 Movies & TV', id: 'videos' },
         { text: '🎭 Mummers Parades', id: 'parades' },
-        // { text: '🏅 Runs', id: 'runs' },
+        { text: '🏅 Runs', id: 'runs' },
         // { text: '🎸 Shows', id: 'shows' },
       ]" />
 
@@ -66,7 +66,7 @@ useHead({
         </blockquote>
         <Shelf dataPath="/api/shelf/parades" alwaysTable />
 
-        <!-- <h2 id="runs">Runs (Official Races)</h2>
+        <h2 id="runs">Runs</h2>
         <blockquote>
           <p>
             “But when I run, the world grows quiet. Demons are forgotten, 
@@ -74,7 +74,7 @@ useHead({
             <em class="text-nowrap">— The Oatmeal</em>
           </p>
         </blockquote>
-        <Shelf dataPath="/api/shelf/books" alwaysTable /> -->
+        <Shelf dataPath="/api/shelf/runs" alwaysTable />
 
         <!-- <h2 id="shows">Shows (Concerts)</h2>
         <blockquote>

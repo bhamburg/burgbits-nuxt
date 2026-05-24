@@ -7,11 +7,11 @@ I’m a software engineer, designer, and musician. Most of my days are spent wor
 
 Ultimately I'm just trying to balance being a father, husband, son, web professional, musician, nerd, colleague, friend, and decent human being in the crazy world we currently live in.
 
-> Father of Twins  
-  Strummer of Strings  
-  Wrangler of the Web  
+> Father of Twins      
   Implementer of Interfaces  
-  Purveyor of Pixels&nbsp;
+  Purveyor of Pixels&nbsp;  
+  Strummer of Strings  
+  Wrangler of the Web
 
 ## Résumé
 
@@ -25,9 +25,12 @@ With over two decades of experience building user interfaces for the Web and pro
 
 When I'm not behind my laptop, you can often find me behind my four-string, plectrum banjo, plunking out traditional jazz favorites written circa a century ago. The style I play is less *Country Bear Jamboree* and more *Hoop-Dee-Doo Musical Revue*, if that makes any sense.
 
-<div class="video-container">
-  <iframe src="https://www.youtube.com/embed/B62Kw4nDD88?rel=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+::youtube-embed
+---
+src: https://www.youtube.com/embed/B62Kw4nDD88?rel=0
+title: 12th Street Rag performed by Brian Hamburg
+---
+::
 
 I've been a member of the world-renowned [Fralinger String Band](https://www.fralinger.org){:target="_blank"} for over 25 years, a perennial favorite in the New Year's Day [Mummers Parade](https://www.fralinger.org/mummers-history){:target="_blank"}. Fralinger has traveled literally around the world with performances that have taken us to Mardi Gras in New Orleans, and as far as Hong Kong for the Chinese New Year celebration. I've also been fortunate to have played with some great traditional jazz musicians as part of hot jazz and Dixieland ensembles in the Philadelphia area.
 
