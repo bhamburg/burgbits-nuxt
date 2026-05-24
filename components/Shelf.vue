@@ -96,7 +96,7 @@ const filteredItems = (item: any) => [
   <!-- Loading -->
   <div
     v-if="status === 'pending'"
-    class="text-sm text-center text-zinc-400 dark:text-zinc-500 p-6 mb-4
+    class="text-sm text-center text-zinc-400 p-6 mb-4
            bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800
            rounded-xl font-mono animate-pulse"
   >
@@ -159,17 +159,17 @@ const filteredItems = (item: any) => [
             <div class="flex overflow-hidden w-24 absolute bottom-6">
               <div
                 v-if="item.firstTime === 'yes'"
-                class="bg-emerald-500 text-white text-[0.5rem] text-center"
+                class="bg-emerald-700 text-white text-[0.5rem] text-center"
                 :class="item.completed === 'yes' ? 'w-1/2' : 'w-full'"
               >NEW</div>
               <div
                 v-if="item.completed === 'yes' && item.firstTime === 'yes'"
                 class="absolute bottom-[-3.5px] left-10 h-5 rotate-45
-                       border-l-emerald-500 border-l-[8px] border-r-sky-600 border-r-[8px]"
+                       border-l-emerald-700 border-l-[8px] border-r-sky-700 border-r-[8px]"
               />
               <div
                 v-if="item.completed === 'yes'"
-                class="bg-sky-600 text-white text-[0.5rem] text-center"
+                class="bg-sky-700 text-white text-[0.5rem] text-center"
                 :class="item.firstTime === 'yes' ? 'w-1/2' : 'w-full'"
               >100%</div>
             </div>
@@ -313,7 +313,7 @@ const filteredItems = (item: any) => [
               class="h-14 border-b border-zinc-100 dark:border-zinc-800
                      hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors"
             >
-              <td v-if="!isCurrent(shelf) && item.dateFinished" class="p-2 w-32 text-right text-zinc-400 dark:text-zinc-500">{{ item.dateFinished }}</td>
+              <td v-if="!isCurrent(shelf) && item.dateFinished" class="p-2 w-32 text-right text-zinc-500 dark:text-zinc-400">{{ item.dateFinished }}</td>
               <td v-if="item.title" class="p-2">
                 <NuxtLink v-if="item.url" :to="item.url" target="_blank">{{ item.title }}</NuxtLink>
                 <span v-else>{{ item.title }}</span>
@@ -353,7 +353,7 @@ const filteredItems = (item: any) => [
       </div>
     </div>
 
-    <p class="my-2 text-sm text-center text-zinc-400 dark:text-zinc-500">
+    <p class="my-2 text-sm text-center text-zinc-400">
       Last updated: {{ formatDate(data?.lastUpdated) }}
     </p>
   </div>
@@ -361,7 +361,7 @@ const filteredItems = (item: any) => [
 
 <style scoped>
 .toggle-option {
-  @apply px-4 py-1 text-xs font-medium rounded-full text-zinc-400 dark:text-zinc-500 transition-colors;
+  @apply px-4 py-1 text-xs font-medium rounded-full text-zinc-400 transition-colors;
 }
 .toggle-option--active {
   @apply bg-white dark:bg-zinc-700 text-zinc-800 dark:text-zinc-100 shadow-sm;

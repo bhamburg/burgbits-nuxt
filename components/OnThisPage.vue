@@ -67,7 +67,7 @@ onUnmounted(() => observer?.disconnect())
 
 <style scoped>
 .toc__label {
-  @apply text-xs text-zinc-400 font-mono font-bold uppercase tracking-widest dark:text-zinc-500 mb-3.5 block;
+  @apply text-xs text-zinc-400 font-mono font-bold uppercase tracking-widest dark:text-zinc-400 mb-3.5 block;
 }
 
 .toc__link {
