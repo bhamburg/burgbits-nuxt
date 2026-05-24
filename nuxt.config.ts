@@ -1,5 +1,15 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  modules: [
+    '@nuxt/content',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/tailwindcss',
+    '@nuxt/image',
+    'nuxt-content-assets',
+    'nuxt-delay-hydration',
+    'nuxt-gtag',
+    'nuxt-proxy',
+  ],
   app: {
     head: {
       bodyAttrs: {
@@ -16,19 +26,15 @@ export default defineNuxtConfig({
     },
   },
   compatibilityDate: '2024-10-24',
+  // Lighthouse Tweak: Change 'init' to 'mount' or specify replay options so gtag tracks properly
+  delayHydration: {
+    mode: 'mount',
+    debug: process.env.NODE_DIR !== 'production'
+  },
   devtools: {enabled: true},
   gtag: {
     id: 'G-30HMKNVJE0',
   },
-  modules: [
-    '@nuxt/content',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/image',
-    'nuxt-content-assets',
-    'nuxt-gtag',
-    'nuxt-proxy',
-  ],
   postcss: {
     plugins: {
       'postcss-custom-media': {},
