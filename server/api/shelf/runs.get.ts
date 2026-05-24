@@ -51,7 +51,7 @@ export default defineCachedEventHandler(
 
     const shelf: Shelf = {
       items,
-      title: 'Officially Sanctioned Races',
+      title: 'Race Finishes',
       viewAll: SHEET_URL,
     };
 
