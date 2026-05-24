@@ -9,14 +9,6 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      link: [
-        {
-          rel: 'preload',
-          as: 'image',
-          href: '/.netlify/images?url=/images/zen-cyberpunk.jpg&f=webp&w=1600',
-          fetchpriority: 'high',
-        }
-      ],
       meta: [
         { name: 'description', content: 'Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.' }
       ],

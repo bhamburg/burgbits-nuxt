@@ -18,12 +18,15 @@ onMounted(() => {
   <section class="jumbotron">
     <div class="jumbotron__overlay"></div>
     <NuxtImg
-      ref="bgImg"
       src="/images/zen-cyberpunk.jpg"
       alt="Zen Garden in a Cyberpunk Cityscape Background Image"
-      @load="isLoaded = true"
       class="jumbotron__bg"
-      :class="isLoaded ? 'opacity-100' : 'opacity-0'"
+      width="1600"
+      height="900"
+      format="webp"
+      preload
+      fetchpriority="high"
+      loading="eager"
     />
     <div class="jumbotron__content">
       <slot />
@@ -40,7 +43,7 @@ onMounted(() => {
     mt-16
     shadow-inner
     transition
-    duration-200
+    duration-100
     overflow-hidden;
   }
   .jumbotron h1, 
