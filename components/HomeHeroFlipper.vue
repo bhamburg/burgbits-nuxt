@@ -31,13 +31,13 @@ function flip() {
     <div class="flip-card-inner">
       <div class="flip-card-front rounded-full bg-slate-700 border-4 border-white shadow-inner">
         <NuxtImg
-          src="/images/flipper/brian-hamburg-profile-photo.jpg"
+          src="/images/brian-hamburg-profile-photo.jpg"
           alt="Brian Hamburg"
           width="320"
           height="320"
           sizes="(max-width: 1024px) 256px, 320px"
           fetchpriority="high"
-          class="rounded-full w-full transition-opacity duration-200"
+          class="rounded-full w-full transition-opacity duration-300"
           :class="heroLoaded ? 'opacity-100' : 'opacity-0'"
           @load="heroLoaded = true"
         />
