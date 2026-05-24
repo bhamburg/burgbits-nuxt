@@ -42,7 +42,7 @@ export default defineCachedEventHandler(
 
     const items: ShelfItem[] = rows
       .map(rowToRaceItem)
-      .filter((item) => item.title !== '' && !!item.dateFinished)
+      .filter((item) => item.name !== '' && !!item.dateFinished)
       .sort((a, b) => {
         if (!a.dateFinished) return 1;
         if (!b.dateFinished) return -1;

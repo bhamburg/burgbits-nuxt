@@ -60,6 +60,7 @@ const comparators: Record<string, (a: any, b: any) => number> = {
   band:         (a, b) => (a.band     ?? '').localeCompare(b.band     ?? ''),
   dateFinished: (a, b) => new Date(a.dateFinished).getTime() - new Date(b.dateFinished).getTime(),
   miles:        (a, b) => parseFloat(a.miles ?? '0') - parseFloat(b.miles ?? '0'),
+  name:         (a, b) => a.name.localeCompare(b.name),
   pace:         (a, b) => toSeconds(a.pace  ?? '0') - toSeconds(b.pace  ?? '0'),
   platform:     (a, b) => (a.platform ?? '').localeCompare(b.platform ?? ''),
   prize:        (a, b) => a.prize - b.prize,
@@ -80,6 +81,7 @@ const sortedItems = (shelf: any) => {
 
 const filteredItems = (item: any) => [
   item.title,
+  item.name,
   item.author,
   item.dateFinished        && `Finished ${item.dateFinished}`,
   item.platform,
@@ -243,7 +245,7 @@ const filteredItems = (item: any) => [
               </ShelfSortTh>
               <!-- Parades -->
               <ShelfSortTh v-if="isParades(shelf)"
-                class="p-2 text-center"
+                class="p-2 text-left"
                 column="band"
                 :active="sortColumn"
                 :direction="sortDirection"
@@ -328,12 +330,16 @@ const filteredItems = (item: any) => [
                 <span v-for="star in item.rating" :key="star">★</span>
               </td>
               <!-- Parades -->
-              <td v-if="item.band" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.band }}</td>
+              <td v-if="item.band" class="p-2 text-left text-zinc-500 dark:text-zinc-400">{{ item.band }}</td>
               <td v-if="item.prize" class="p-2 text-center text-zinc-500 dark:text-zinc-400">{{ item.prize }}</td>
               <td v-if="item.suit" class="p-2 text-center text-xl text-emerald-500">
                 <span v-if="item.suit.toLowerCase() === 'yes'" title="paraded in costume" class="cursor-help">✔</span>
               </td>
               <!-- Runs -->
+              <td v-if="item.name" class="p-2">
+                <NuxtLink v-if="item.url" :to="item.url" target="_blank">{{ item.name }}</NuxtLink>
+                <span v-else>{{ item.name }}</span>
+              </td>
               <td v-if="item.time" class="p-2 text-right text-zinc-500 dark:text-zinc-400">{{ item.time }}</td>
               <td v-if="item.pace" class="p-2 text-right text-zinc-500 dark:text-zinc-400">{{ item.pace }}</td>
               <td v-if="item.miles" class="p-2 text-right text-zinc-500 dark:text-zinc-400">{{ item.miles }}</td>
