@@ -5,10 +5,10 @@ const photos = Object.keys(imageModules).map(k => k.replace('/public', ''))
 const heroLoaded = ref(false)
 const flipped = ref(false)
 const flipping = ref(false)
+const hasFlipped = ref(false)
 const photoIndex = ref(Math.floor(Math.random() * photos.length))
 
 onMounted(() => {
-  photos.forEach(src => { new Image().src = src })
   setInterval(flip, 10000)
 })
 
@@ -16,41 +16,42 @@ function flip() {
   if (flipping.value) return
   flipping.value = true
   flipped.value = !flipped.value
+  hasFlipped.value = true
   if (!flipped.value) {
-    setTimeout(() => {
-      photoIndex.value = Math.floor(Math.random() * photos.length)
-    }, 800)
+    const nextIndex = Math.floor(Math.random() * photos.length)
+    new Image().src = photos[nextIndex]
+    setTimeout(() => { photoIndex.value = nextIndex }, 800)
   }
   setTimeout(() => { flipping.value = false }, 1000)
 }
 </script>
 
 <template>
-  <div
-    @click="flip"
-    :class="['flip-card lg:w-80 lg:h-80 w-64 h-64', { active: flipped }]"
-    title="Click me!"
-  >
+  <div @click="flip" :class="['flip-card lg:w-80 lg:h-80 w-64 h-64', { active: flipped }]" title="Click me!">
     <div class="flip-card-inner">
       <div class="flip-card-front rounded-full bg-slate-700 border-4 border-white shadow-inner">
-        <ClientOnly>
-          <NuxtImg
-            src="/images/brian-hamburg-profile-photo-DICE2019.jpeg"
-            alt="Brian Hamburg"
-            class="rounded-full w-full transition-opacity duration-1000"
-            :class="heroLoaded ? 'opacity-100' : 'opacity-0'"
-            @load="heroLoaded = true"
-          />
-        </ClientOnly>
+        <NuxtImg
+          src="/images/flipper/brian-hamburg-profile-photo.jpg"
+          alt="Brian Hamburg"
+          width="320"
+          height="320"
+          sizes="(max-width: 1024px) 256px, 320px"
+          fetchpriority="high"
+          class="rounded-full w-full transition-opacity duration-200"
+          :class="heroLoaded ? 'opacity-100' : 'opacity-0'"
+          @load="heroLoaded = true"
+        />
       </div>
       <div class="flip-card-back rounded-full bg-white border-4 border-white">
-        <ClientOnly>
-          <NuxtImg
-            class="rounded-full w-full"
-            :src="photos[photoIndex]"
-            alt="Brian Hamburg"
-          />
-        </ClientOnly>
+        <NuxtImg
+          v-if="hasFlipped"
+          class="rounded-full w-full"
+          :src="photos[photoIndex]"
+          alt="Brian Hamburg"
+          width="320"
+          height="320"
+          loading="lazy"
+        />
       </div>
     </div>
   </div>

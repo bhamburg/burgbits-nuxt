@@ -19,7 +19,7 @@ onMounted(() => {
     <div class="jumbotron__overlay"></div>
     <NuxtImg
       ref="bgImg"
-      src="/images/zen-cyberpunk.png"
+      src="/images/zen-cyberpunk.jpg"
       alt="Zen Garden in a Cyberpunk Cityscape Background Image"
       @load="isLoaded = true"
       class="jumbotron__bg"

@@ -2,17 +2,25 @@
 export default defineNuxtConfig({
   app: {
     head: {
+      bodyAttrs: {
+        class: 'dark:text-white dark:bg-zinc-800 transition',
+      },
       charset: 'utf-8',
       htmlAttrs: {
         lang: 'en'
       },
-      viewport: 'width=device-width, initial-scale=1',
+      link: [
+        {
+          rel: 'preload',
+          as: 'image',
+          href: '/.netlify/images?url=/images/zen-cyberpunk.jpg&f=webp&w=1600',
+          fetchpriority: 'high',
+        }
+      ],
       meta: [
         { name: 'description', content: 'Brian Hamburg\'s personal portfolio and blog, showcasing his work as a software engineer, designer, and musician based in the Philadelphia area.' }
       ],
-      bodyAttrs: {
-        class: 'dark:text-white dark:bg-zinc-800 transition',
-      },
+      viewport: 'width=device-width, initial-scale=1',
     },
   },
   compatibilityDate: '2024-10-24',
