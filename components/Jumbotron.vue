@@ -19,8 +19,8 @@ onMounted(() => {
     <div class="jumbotron__overlay"></div>
     <NuxtImg
       ref="bgImg"
-      src="/images/zen-cyberpunk.jpg"
-      alt="Zen Garden in a Cyberpunk Cityscape Background Image"
+      src="/images/aurora-australis.jpg"
+      alt="Aurora Australis © NASA. Photographed from the International Space Station. (NASA image: ISS072E574663)"
       class="jumbotron__bg"
       sizes="sm:100vw md:100vw lg:1600px"
       preload
@@ -51,26 +51,28 @@ onMounted(() => {
   }
 .jumbotron__bg {
     @apply 
-    absolute 
-    top-0 
-    left-0 
-    w-full 
-    h-full 
+    absolute
+    rounded-none
+    top-0
+    left-0
+    w-full
+    h-full
     object-cover
-    object-bottom
-    origin-bottom
-    dark:object-[center_23%]
-    dark:origin-[center_23%]
-    scale-[200%]
+    object-[center_55%]
+    origin-[center_55%]
+    dark:object-[center_18%]
+    dark:origin-[center_18%]
+    scale-[300%]
     sm:origin-center
-    sm:scale-150
+    sm:scale-100
     transition-all
-    duration-700;
+    duration-[2s];
   }
   .jumbotron__overlay {
     @apply
     absolute
-    opacity-80
+    opacity-60
+    dark:opacity-25
     h-full
     w-full
     bg-gradient-to-r 
@@ -78,6 +80,8 @@ onMounted(() => {
     to-emerald-400 
     dark:from-indigo-900 
     dark:to-black
+    transition-all
+    duration-[2s]
     z-10;
   }
   .jumbotron__content {
