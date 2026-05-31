@@ -1,3 +1,7 @@
+---
+description: Software engineer, designer, and musician based in Philadelphia. Senior Software Engineer at The Walt Disney Company, 25-year member of the Fralinger String Band, and father of twins.
+---
+
 ## About Brian Hamburg
 
 ![Hamburg Family](/images/hamburgs-2026.jpg)
@@ -5,13 +9,15 @@
 
 I’m a software engineer, designer, and musician. Most of my days are spent working and playing in Philadelphia where I live with my wife, Andrea, and twin daughters, Elizabeth and Louise. But this is just the tip of the Brian Hamburg iceberg. Within these pages you can learn more about what's going on in my life professionally and recreationally.
 
-Ultimately I'm just trying to balance being a father, husband, son, web professional, musician, nerd, colleague, friend, and decent human being in the crazy world we currently live in.
-
 > Father of Twins      
   Implementer of Interfaces  
   Purveyor of Pixels&nbsp;  
   Strummer of Strings  
   Wrangler of the Web
+
+Ultimately I'm just trying to balance being a father, husband, son, web professional, musician, nerd, colleague, friend, and decent human being in the crazy world we currently live in.
+
+Beyond the bio, I try to keep a couple of pages up to date that give a more dynamic picture of who I am and what I'm working with. The [/now](/now) page is a snapshot of what's going on in my life at any given moment — inspired by the nownownow movement started by Derek Sivers. The [/uses](/uses) page is a running list of the hardware, software, and tools I rely on daily as an engineer, musician, and general tech enthusiast. Both are worth a look if you want to keep tabs on what I'm up to.
 
 ## Résumé
 
@@ -40,7 +46,9 @@ Besides keeping this site up-to-date using the latest tech, I also helped build 
 
 I'm always trying to read more. Mostly sci-fi, pop-sci, philosophy, and the classics, but I'm open to anything. It's hard to find the time, but I've been doing a pretty good job of keeping up with my [reading list](/shelves). Ryan Holiday and Robert Greene are two of my more recent favorite authors, and they have each led me to some great authors who inspired them.
 
-I like to think playing Super Mario Bros. and arcade games in the late 80s, and tinkering with DOS and Windows 95 to get multiplayer Doom going, is what initially drove my interest in technology, and specifically interactive digital experiences. I find myself gravitating towards games from and inspired by that 8- and 16-bit age of pixel art. The heavily-syncopated, early-jazz-inspired soundtracks of the games from the NES/SNES era definitely affected my musical tastes as much as the concise UIs built for limited resources affected my design sensabilities.
+I like to think playing Super Mario Bros. and arcade games in the late 80s, and tinkering with DOS and Windows 95 to get multiplayer Doom going, is what initially drove my interest in technology, and specifically interactive digital experiences. I find myself gravitating towards games from and inspired by that 8- and 16-bit age of pixel art. The heavily-syncopated, early-jazz-inspired soundtracks of the games from the NES/SNES era definitely affected my musical tastes as much as the concise UIs built for limited resources affected my design sensibilities.
+
+If any of this resonates, you can find me on [GitHub](https://github.com/bhamburg){:target="_blank"} or [Threads](https://www.threads.com/@burgbits){:target="_blank"}. I'd love to connect.
 
 ![Zelda on PVM via MiSTer FPGA](/images/mister-zelda.jpeg)
 *The Legend of Zelda on my PVM via MiSTer FPGA*
