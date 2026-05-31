@@ -1,4 +1,5 @@
 ---
+description: The hardware, software, and tools Brian Hamburg relies on daily as a software engineer, musician, and general tech enthusiast.
 updated: 2026-05-13
 ---
 A catalog of the hardware and software I rely on day-to-day, 

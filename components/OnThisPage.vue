@@ -71,7 +71,7 @@ onUnmounted(() => observer?.disconnect())
 }
 
 .toc__link {
-  @apply block text-[0.9rem] leading-[1.45]
+  @apply block text-[0.85rem] leading-[1.45]
          pt-[5px] pb-[5px] pr-2 pl-[10px]
          border-l-2 border-l-transparent rounded-r
          no-underline transition-colors duration-150

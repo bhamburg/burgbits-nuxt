@@ -30,7 +30,7 @@ const SHEET_URL =
 
 function rowToBookItem(row: Record<string, string>): ShelfItem {
   return {
-    author: `${row.authorLast ?? ''}, ${row.authorFirst ?? ''}`.trim(),
+    author: [row.authorLast, row.authorFirst].filter(Boolean).join(', '),
     coverSrc: row.coverSrc ?? '',
     dateFinished: row.dateRead ?? '',
     rating: row.rating 

@@ -1,11 +1,94 @@
 ---
 title: Thoughts On AI
-date: 2026-05-21
+date: 2026-06-01
 featuredImage: ../../images/will-smith-2026-ai.jpg
 caption: Screen capture of an AI-generated video of Will Smith in 2026, created by Seedance 2.0
-description: >-
-  Throwing my two cents in on the current state of AI, and where I think we might be headed.
-published: false
+description: Throwing my two cents in on the current state of AI, and where I think we might be headed.
+published: true
 ---
 
-Hello.
+It’s been another half decade since my last blog post. Sorry about that. But the rise of AI has compelled me again to do a very human thing and put my thoughts down on a page. Tools such as large language models and video and image generators have worked their way into every corner of modern life, and everyone seems to have opinions on where we’re headed. Here are mine.
+
+## Legacy Support
+
+I’ve been interested in how humans interact with computers for as long as I can remember. I’m fortunate to have had a very forward-thinking father who insisted we “learn the computer” while I was still in grade school in the 90s. He had the foresight to realize that his American Legion Post should start doing their banking with Quicken before that was commonplace. He knew the value of having a new Packard Bell PC with Encarta on it for my homework and projects around the time Windows 95 dropped. We had AOL before most of my friends. He was banking online, keeping inventory of his toy trucks and trains in Excel, and doing email literal decades before most boomers became comfortable with such tasks, and he’s technically part of the prior (Greatest) generation. Yes, he had me late in life, which adds to the unlikeliness of it all.
+
+Fellow millennials and Gen-Xers know the pain, but generations born after mine might not realize that just getting computer programs (as apps were called) to work was a much taller task back then, so we were both fortunate that my dad pushed me to pursue a career where my main focus would be the digital touchpoint between people and the services they need. I quickly became tech support for most of my family and friends. This was before Google existed, and when “AI” meant Allen Iverson in almost every conversation.
+
+My first real job was working the phones and email box for the Law School Admission Council’s help desk, helping colleagues configure their printers as well as acting as a navigator for law school candidates in the online application and LSAT registration process. Eventually I transitioned to the communications department to work on those very websites as a developer. My career path of building accessible and usable websites was established.
+
+That’s a longwinded way to say that I have a qualified historical perspective on the trajectory of how humans have been getting their information from devices connected to the Internet.
+
+## AI, Anecdotally
+
+While a lot of what I’m about to say later might come off as negative or pessimistic, I don’t want to downplay that we are in fact in the midst of a revolution and it seems to be accelerating. The work that has been done in AI, specifically the machine learning field, is nothing short of incredible. Just last year I remember thinking about how it might be good idea to start implementing code generation into my work, or at least having these tools review my code and docs, just to see what was possible. Now its usage is mandated by our company and most other large tech-adjacent companies due to the claimed productivity boosts. To drive home the point of how much AI has improved over the past two years, here's “Will Smith Eating Spaghetti.”
+
+::youtube-embed
+---
+src: https://www.youtube.com/embed/g_31_Kj0-NE?si=-L35AZ4zZwOjFGmm
+title: Will Smith Eating Spaghetti over the years
+---
+::
+
+In that same timeframe, I’ve personally gone from using the free version of GitHub Copilot as a fancy autocomplete and a second set of eyes before committing code, to having Cursor using Claude under the hood help me plan out entire spec documents and then *implement* that spec to surprisingly high levels of reliability. It’s not a magic wand. It does need some handholding on complicated tasks, but the last few months of using these tools has been eye-opening, truly amazing (like the real meaning of that word), and slightly terrifying.
+
+If I have a bug, I ask Claude via the Cursor interface first, because there is zero friction between the code editor and the chat window. Similarly, if I ask Google over in my browser, the answer gets provided by Gemini instead of a PageRank search result. I have not visited StackOverflow yet this calendar year. When I’ve written some code and I want to simplify it and make it easier to understand, I ask Claude. If I have a general idea of what I want but nothing concrete, I ask Claude. It can also scour my Jira tickets and the team’s Confluence documents for context. It’s brilliant at brainstorming and quickly spitting out variations on solutions that it was trained on. It’s actually a bit unnerving how well and how quickly it can synthesize whatever I throw at it.
+
+These tools have even been extremely helpful for generating wireframes and mockups and rough drafts, not just at work, but also for our string band theme research. In terms of pure speed, it’s never been easier to produce artifacts and iterate on ideas. When ideas can be visualized so quickly, and virtually “free” (more on that later), it’s incredible what can be achieved. Below is an example of what an earlier model of Microsoft Copilot “drew” for us as compared to the final sketch by Russ Fama, and the real-world constructed costume in the 2025 Mummers Parade.
+
+![Microsoft Copilot-generated brainstorming result (left), final sketch for costume design by Russ Fama (center), finished costume in the 2025 Mummers Parade (right)](/images/mummers-laundry-ai-sketch-reality.jpg)
+_Microsoft Copilot-generated brainstorming result (left), final sketch for costume design by Russ Fama (center), finished costume in the 2025 Mummers Parade (right)_
+
+Now some groups have gone as far to *replace* their sketch artists with AI and go directly to the costumer with their vibe-designed concepts. It's certainly a way to save money and time, but I'll save my judgement on the effectiveness of that approach until I see the final results. Regardless, the fact that this is even a possibility is a testament to how far the technology and the level of its adoption have come in such a short amount of time.
+
+And that, I think, is where my good vibes about AI come to an end.
+
+## Atrophy, Entropy, Legality
+
+These tools certainly do remove friction in the creative process. However, friction is exactly the thing that keeps us sharp. While I go as far as to pride myself on making experiences as smooth as possible for end users, I take the opposite approach when it comes to my own development. A muscle never used quickly becomes weaker. If I'm constantly relying on Claude to help me to do the mundane tasks related to my job and my hobbies, I will get rusty at those tasks. Worse, I may lose the capacity to evaluate the output of those tasks completed by AI tools. The Cursor IDE generating code for me takes away the most time-consuming part of the job, but it also takes away my familiarity with the codebase and the implementation details of the ticket. I get worse at my job and more reliant on the tool. If we extrapolate that out long enough, you end up with a bunch of rusty, washed-up engineers and designers, and zero humans on the team who actually know how the code works when something inevitably breaks.
+
+There is also a problem of introducing noise. If you can make the wrong thing 10X faster, you can end up with 10X more of the wrong thing. That noise is taxing on the human brain, and it can be hard to filter out the good from the bad. This is especially true when it comes to code generation, where tools like Cursor might produce code that looks correct but has subtle bugs or security vulnerabilities. I've personally run into this a few times at work as we've been trying to calibrate our usage of these tools. There was a specific example where Cursor (running in "auto" mode) generated code that looked correct, albeit verbose, and passed all the tests. However, in its attempt to hit every edge case, it introduced a bug that I didn't catch until after submitting the PR for review. That was a wake-up call for me to be more careful and not just blindly trust the output of these tools.
+
+I likened the experience of Claude executing a plan to using a Roomba for the task of vacuuming a living room. Most of the time it cleans the floor without a problem, but every once in a while it gets stuck under the couch or commits suicide down a flight of stairs. If you’re not paying attention, you might not even notice that it’s not doing the job that it was supposed to do, and worse, that it _claims_ to have done.
+
+Then there are the legal and ethical implications of using AI-generated content at all. Allowing these companies to scrape the Internet to train their models is truly morally questionable. While I've usually been of the mindset that "information wants to be free" and modern copyright laws are consumer-antagonistic, what you have now equates to business-to-business piracy. Livelihoods are being destroyed by making it too easy to create artwork, apps, and even music and video. The "AI Jobpocalypse" as these other talking heads call it, appears to be here, or at least that's what the AI peddlers would like to have the CEOs believe. I'm not convinced that there won't be a fallout from replacing human judgement and taste that's driven by years of lived experience, with a machine that can only ever generate mediocrity. But maybe we're so distracted by our social media feeds, traditional media, and politicians "flooding the zone" that most people won't notice as the quality of everything around us continues to decline.
+
+And then there is the issue of using AI tools in settings that involve sensitive information such as medical records, financial data, and legal documents. The risk of data breaches and privacy violations is significant. Sending PII to the cloud for the models to consume sounds like every cautionary sci-fi film from the last 50 years that nobody apparently paid attention to long enough. These concerns have led to these industries either being slow to adopt AI tools, or to have on-premises solutions that are not as powerful as the cloud-based tools that are available to the general public. That's a real problem for the AI business model as much as it's a problem for these industries that could benefit from these tools. Or, perhaps, these industries will be ahead of the curve in creative AI solutions as opposed to the large firms who just paid for their intelligence like a utility. It will be fascinating to see how it plays out.
+
+## The Threat Is The Product
+
+The thing that grinds my gears the most about this whole situation is how disingenuous the companies behind these tools have been about the capabilities and limitations of their products. The cost of running a datacenter is astronomical. The amount of clean water and electricity that it costs to provide these services is catastrophic. AI has given a whole new meaning to the phrase, "let's not boil the ocean." It's as if the only way companies like Anthropic and OpenAI can continue to exist is if they can convince corporate leadership that their tools will eliminate the need for human labor. "Don't want to be left behind! You don't need a plan, you just need to invest in AI!" It's a classic snake oil sales pitch, and it's working. The bigger and scarier they make their product sound, the more leaders seem to be buying into it.
+
+As someone who has been in the tech industry for a while, writing code, where the rubber meets the road, I can tell you that there is no way that these tools can replace human creativity and judgement. We are _not_ close to AGI, whatever they've decided AGI stands for this week. It's truly unfortunate and shortsighted that so much money is being diverted from human investment to these tools. The threat isn't that AI replacing humans is _inevitable_, it's that the humans are at it again, making life worse for other humans in the pursuit of profit.
+
+## Pontificating
+
+As luck would have it, as I was pulling my thoughts together for this piece, a higher authority threw in his two cents in the form of a 42,000-word _book_ on this very subject. In his first encyclical as pontiff, _[Magnifica Humanitas](https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html){target="_blank"}_, Pope Leo XIV addresses the dangers of AI through the lens of human dignity. He cites his predecessors who also confronted technological progress of their time as a precedent for his own stance on the issue. What I found the most interesting actually shows up in the first half of the work, where he discusses the value of human beings and the importance of recognizing that our worth is not determined by our productivity or achievements. He argues that AI, while it may be able to perform certain tasks more efficiently than humans, can never replace the intrinsic value of human life. This is an official condemnation of aspects of Calvinism, specifically predestination anxiety, and the exploitative Protestant Work Ethic that particularly afflict the US. This is the ideological basis for runaway capitalism and the hoarding of wealth. This is a shot across the bow of the billionaires. My woke pope is not pulling punches!
+
+::quote
+---
+author: Pope Leo XIV
+text: The value of persons, however, does not depend on what they achieve or produce.
+---
+::
+
+There has been an utter void in leadership at the nation-state level regarding AI and other recent technologies. Global power has shifted to transnational networks of wealthy individuals that Jessica Burbank calls _[Syndicates of Capital](https://kaburbank.substack.com/p/syndicates-of-capital){target="_blank"}_. I love that name and her insights are worth your time. The Church has seen empires rise and fall for two thousand years. The timing of this encyclical, and the election of this particular pope, suggests it recognizes this moment for what it is. Where our secular institutions have failed to protect us from the negative consequences of AI, and post-capitalist technofeudalism, the Church has stepped in to provide philosophical guidance that transcends borders in a way that perhaps it only can, and I'm here for it.
+
+The Pope is clear not to outright condemn the technology itself, but rather asks a question I've had myself before reading his words. AI is not evil. Technology is neutral. It's how we use it that matters. None of the negative consequences of AI are inevitable.
+
+**Whose** version of the future are we building?
+
+## Stay Weird
+
+Some of the most important advice I received in my career came as a quick throwaway comment from a colleague at Jefferson. I asked him what I should do next since we were just starting to cut our teeth on building real solutions for our content management system. He said, "Stay weird." He meant that I should keep learning new things that interest me, and try to be unique in my skillset. I don't think he realized that hit as hard as it did. Now, more than ever, I think it's important to stay weird. Much of Robert Greene's writing is centered around this idea and he's one of my favorite non-fiction writers. Keeping in mind that all AI tools are rearward looking by their very nature, since they can only generate based on what they have been trained on, it becomes a human imperative, maybe _the_ human imperative of our time, to keep pushing the boundaries of creativity. If you have LLMs write your code and your blog posts, they will only ever draw from the same pool of existing code and writing. If you have an AI tool create your visuals, you will only see things that have been envisioned before. You end up with an average of the past. It's mediocre by definition. If you want to be exceptional, you have to be weird.
+
+Full disclosure, I have been using AI tools to help me write this piece. I have been using them to help me organize my thoughts and to generate some of the wording. Claude is a fantastic editor and a great brainstorming partner. I have been using it to help me find the right words to express my thoughts, and to help me structure the piece in a way that flows well. However, I have been careful to ensure that the final product is still my own voice and my own thoughts. I have been using these tools as a way to enhance my creativity, not replace it. Drawing the connections between subjects and creating something that did not exist before is all me. I hope that comes through in the writing.
+
+::quote
+---
+author: Robert Greene
+text: Embrace your strangeness. Identify what makes you different. Fuse those things together and become an anomaly.
+---
+::
+
+Dear reader, by all means, use these tools to help you get by in life, but don't let them make you lose your edge. Challenge yourself. Take on the big project that AI can't do. Question the answers they provide considering who actually owns the technology. Do hard things. Create things that have never been created before. Be the anomaly in the matrix. Stay weird.
