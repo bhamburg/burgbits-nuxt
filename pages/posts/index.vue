@@ -1,6 +1,6 @@
 <script setup lang="ts">
 useHead({
-  title: 'Blog',
+  title: 'Blog Posts',
 })
 
 import { formatDate } from '~/utils/contentHelpers';
