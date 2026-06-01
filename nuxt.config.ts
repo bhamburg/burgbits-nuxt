@@ -25,6 +25,11 @@ export default defineNuxtConfig({
       viewport: 'width=device-width, initial-scale=1',
     },
   },
+  content: {
+    markdown: {
+      anchorLinks: false
+    }
+  },
   compatibilityDate: '2024-10-24',
   // Lighthouse Tweak: Change 'init' to 'mount' or specify replay options so gtag tracks properly
   delayHydration: {
