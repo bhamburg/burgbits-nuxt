@@ -133,7 +133,7 @@ const filteredItems = (item: any) => [
           :key="`${item.title}-${item.dateFinished}`"
           :title="filteredItems(item)"
           :to="item.url"
-          class="mx-3 mb-6 relative no-underline overflow-hidden
+          class="mx-1 md:mx-2 mb-2 relative no-underline overflow-hidden
                  drop-shadow-md hover:drop-shadow-lg hover:scale-105 transition-transform"
           target="_blank"
         >
@@ -150,7 +150,7 @@ const filteredItems = (item: any) => [
             v-if="item.coverSrc"
             :alt="item.title"
             :src="item.coverSrc"
-            class="w-[94px] rounded-none border-none shadow transition-opacity" 
+            class="w-24 rounded-none border-none shadow transition-opacity" 
           />
 
           <!-- NEW / 100% badges -->
@@ -184,7 +184,7 @@ const filteredItems = (item: any) => [
           :to="shelf.viewAll"
           target="_blank"
           class="flex items-center justify-center text-center font-bold capitalize
-                 h-[144px] w-24 mx-3 mb-12 no-underline
+                 h-[144px] w-24 mx-1 md:mx-2 mb-8 no-underline
                  bg-gradient-to-l hover:bg-gradient-to-r
                  text-white hover:text-white
                  from-sky-600 to-emerald-400 dark:from-indigo-900 dark:to-black
