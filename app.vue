@@ -85,15 +85,17 @@ section, footer {
   }
   ol { @apply list-decimal ml-4; }
 
-  /* Blockquote — left-border editorial style, consistent with card system */
+  /* Blockquote */
   blockquote {
     font-family: var(--font-code);
     @apply p-6 rounded-xl text-center md:text-xl
-           border-l-4 border-l-sky-500 dark:border-l-indigo-500
-           border-r-4 border-r-emerald-400 dark:border-r-purple-500
-           bg-zinc-50 dark:bg-zinc-900
-           text-zinc-700 dark:text-zinc-300
-           shadow-sm;
+      bg-gradient-to-l
+      dark:from-indigo-900 
+      dark:to-black
+      from-sky-200 
+      to-emerald-100 
+      shadow-sm
+      text-black dark:text-white;
     p, p:first-child { @apply m-0; }
   }
 
