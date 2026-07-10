@@ -129,7 +129,7 @@ section, footer {
     @apply relative overflow-hidden rounded-xl p-6
       bg-white dark:bg-zinc-900
       border border-zinc-200 dark:border-zinc-900
-      transition-transform duration-200 hover:-translate-y-1;
+      transition-transform duration-200 lg:hover:-translate-y-1;
     &::before {
       content: '';
       @apply absolute top-0 left-0 right-0 h-[3px] rounded-t-xl;

@@ -9,14 +9,6 @@ article {
   @apply grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-7 mt-4 lg:mt-10;
 }
 
-/* Base card transition and hover effect */
-:slotted(.card) {
-  @apply transition-transform duration-300 ease-out;
-}
-:slotted(.card:hover) {
-  @apply lg:-translate-y-1.5;
-}
-
 /* Card Highlights - Ultra Subtle Ambient Glow */
 :slotted(.card:nth-child(1)) { 
   @apply bg-gradient-to-b from-sky-500/15 to-transparent dark:from-indigo-500/10; 
