@@ -14,7 +14,7 @@ article {
   @apply transition-transform duration-300 ease-out;
 }
 :slotted(.card:hover) {
-  @apply -translate-y-1.5; /* Shifts up by 6px. Use -translate-y-1 or -translate-y-2 to adjust amount */
+  @apply lg:-translate-y-1.5;
 }
 
 /* Card Highlights - Ultra Subtle Ambient Glow */
