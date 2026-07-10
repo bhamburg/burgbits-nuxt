@@ -92,8 +92,8 @@ section, footer {
       bg-gradient-to-l
       dark:from-indigo-900 
       dark:to-black
-      from-sky-200 
-      to-emerald-100 
+      from-sky-300 
+      to-emerald-200 
       shadow-sm
       text-black dark:text-white;
     p, p:first-child { @apply m-0; }
