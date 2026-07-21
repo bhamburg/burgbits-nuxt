@@ -127,7 +127,7 @@ const filteredItems = (item: any) => [
       </div>
 
       <!-- Grid view -->
-      <div v-show="!isTable(shelf) && shelf.items[0].coverSrc" class="flex flex-row flex-wrap items-end justify-center md:justify-start">
+      <div v-show="!isTable(shelf) && shelf.items[0].coverSrc" class="flex flex-row flex-wrap items-end justify-start">
         <NuxtLink
           v-for="item in shelf.items.slice(0, GRID_MAX)"
           :key="`${item.title}-${item.dateFinished}`"
